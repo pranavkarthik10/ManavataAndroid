@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/ourteamTitle"
+        android:layout_width="284dp"
+        android:layout_height="165dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="64dp"
+        android:text="Our Team"
+        android:textColor="@color/colorBlack"
+        android:textSize="50dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/ourteamdefine"
+        android:layout_width="wrap_content"
+        android:layout_height="104dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="134dp"
+        android:layout_marginEnd="43dp"
+        android:text="Manavata has team members worldwide, including in India, the United Kingdom, and the United States. Learn more about this at the link below."
+        android:textColor="@color/colorBlack"
+        android:textSize="17dp" />
+
+    <Button
+        android:id="@+id/readmorebutton1"
+        android:layout_width="142dp"
+        android:layout_height="37dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="99dp"
+        android:layout_marginLeft="99dp"
+        android:layout_marginBottom="118dp"
+        android:background="@color/colorMission"
+        android:text="Read More"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite" />
+</RelativeLayout>

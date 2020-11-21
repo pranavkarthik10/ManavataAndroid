@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/missionDefine"
+        android:layout_width="381dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="237dp"
+        android:layout_marginEnd="0dp"
+        android:text="Our Mission is to make the world Healthy, Happy, and Harmonious: The 3H Way. Millions of people in India lack access to basic health, education, and the freedom to participate in the economy equally. We strive to reach out to bring a change through our voluntary, initiatives aimed for the individual, family, village, and society. Through our efforts we work to improve human values and quality of life by educating, sharing and participating in their life through natural and eco-friendly lifestyles and livelihood."
+        android:textColor="@color/colorBlack"
+        android:textSize="17dp" />
+
+    <TextView
+        android:id="@+id/mission"
+        android:layout_width="404dp"
+        android:layout_height="181dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="7dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="102dp"
+        android:layout_marginEnd="0dp"
+        android:text="We believe every person deserves the choice to live with dignity not dependence"
+        android:textAllCaps="true"
+        android:textColor="@color/colorMission"
+        android:textSize="27dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/missionTitle"
+        android:layout_width="404dp"
+        android:layout_height="181dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="3dp"
+        android:text="Mission"
+        android:textColor="@color/colorBlack"
+        android:textSize="50dp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

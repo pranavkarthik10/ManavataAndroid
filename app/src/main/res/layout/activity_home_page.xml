@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/aboutmanavata"
+        android:layout_width="175dp"
+        android:layout_height="251dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="19dp"
+        android:layout_marginRight="19dp"
+        android:layout_marginBottom="12dp"
+        android:text="About Manavata" />
+
+    <Button
+        android:id="@+id/yoga"
+        android:layout_width="175dp"
+        android:layout_height="251dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginBottom="279dp"
+        android:text="Yoga" />
+
+    <Button
+        android:id="@+id/healthycooking"
+        android:layout_width="175dp"
+        android:layout_height="251dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="215dp"
+        android:layout_marginRight="215dp"
+        android:layout_marginBottom="15dp"
+        android:text="Healthy Cooking" />
+
+</RelativeLayout>
