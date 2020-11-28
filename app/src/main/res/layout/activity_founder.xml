@@ -1,68 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/founder"
-        android:layout_width="284dp"
-        android:layout_height="165dp"
+        android:layout_width="284sp"
+        android:layout_height="165sp"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_marginStart="17dp"
-        android:layout_marginLeft="17dp"
-        android:layout_marginTop="26dp"
-        android:text="Founder"
+        android:text="@string/founder_title"
         android:textColor="@color/colorBlack"
-        android:textSize="50dp"
-        android:textStyle="bold" />
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.21"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.082" />
 
     <ImageView
         android:id="@+id/founderImage"
-        android:layout_width="221dp"
-        android:layout_height="196dp"
+        android:layout_width="221sp"
+        android:layout_height="196sp"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="73dp"
-        android:layout_marginLeft="73dp"
-        android:layout_marginTop="87dp"
-        app:srcCompat="@drawable/founder" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.254"
+        app:srcCompat="@drawable/founder"
+        android:contentDescription="@string/image_founder" />
 
     <TextView
         android:id="@+id/founderDefine"
-        android:layout_width="381dp"
-        android:layout_height="wrap_content"
+        android:layout_width="327sp"
+        android:layout_height="182sp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="281dp"
-        android:layout_marginEnd="-3dp"
-        android:text="An IT Architect by profession, Srinivas Alluri (Srini) founded the IT company Sandhata Technologies, with operations in the UK and India. He maintains a simple lifestyle and dedicates his entire personal life towards making his mission inspired by great personalities including the like of Mahatma Gandhi, Swami Vivekananda, Ramana Maharshi among others."
+        android:text="@string/founder_info"
         android:textColor="@color/colorBlack"
-        android:textSize="17dp" />
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.698" />
 
     <Button
         android:id="@+id/readmorebutton"
-        android:layout_width="142dp"
-        android:layout_height="37dp"
+        android:layout_width="142sp"
+        android:layout_height="37sp"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="102dp"
-        android:layout_marginLeft="102dp"
-        android:layout_marginBottom="8dp"
         android:background="@color/colorMission"
-        android:text="Read More"
+        android:text="@string/read_more_button"
         android:textAllCaps="false"
-        android:textColor="@color/colorWhite" />
+        android:textColor="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.902" />
 
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,6 +18,10 @@
         <activity android:name=".FounderActivity" />
         <activity android:name=".AboutManavataActivity" />
         <activity android:name=".HomePageActivity" />
+        <activity android:name=".SignInActivity" />
+        <activity android:name=".EmailActivity" />
+        <activity android:name=".GoogleEmailActivity" />
+        <activity android:name=".FacebookActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

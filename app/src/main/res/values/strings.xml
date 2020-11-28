@@ -1,3 +1,34 @@
 <resources>
     <string name="app_name">Manavata</string>
+    <string name="what_do_we_do">What do we do?</string>
+    <string name="who_are_we">Who are we?</string>
+    <string name="log_in_sign_up">Log In/Sign Up</string>
+    <string name="yoga">Yoga</string>
+    <string name="healthy_cooking">Healthy Cooking</string>
+    <string name="about_manavata">About Manavata</string>
+    <string name="founder_info">An IT Architect by profession, Srinivas Alluri (Srini) founded the IT company Sandhata Technologies, with operations in the UK and India. He maintains a simple lifestyle and dedicates his entire personal life towards making his mission inspired by great personalities including the like of Mahatma Gandhi, Swami Vivekananda, Ramana Maharshi among others.</string>
+    <string name="read_more_button">Read More</string>
+    <string name="founder_title">Founder</string>
+    <string name="image_founder">image_founder</string>
+    <string name="mission_info">Our Mission is to make the world Healthy, Happy, and Harmonious: The 3H Way. Millions of people in India lack access to basic health, education, and the freedom to participate in the economy equally. We strive to reach out to bring a change through our voluntary, initiatives aimed for the individual, family, village, and society. Through our efforts we work to improve human values and quality of life by educating, sharing and participating in their life through natural and eco-friendly lifestyles and livelihood.</string>
+    <string name="mission_title">Mission</string>
+    <string name="mission_blue">We believe every person deserves the choice to live with dignity not dependence</string>
+    <string name="our_team">Our Team</string>
+    <string name="our_team_info">Manavata has team members worldwide, including in India, the United Kingdom, and the United States. Learn more about this at the link below.</string>
+    <string name="read_more">Read More</string>
+    <string name="philosophy_title">Philosophy</string>
+    <string name="philosophy_info">Take initiatives and serve based on needs of the people, society, and nature. At proper time and place, at the time of distress, disaster and disability. Charity given out of duty, at the proper time and place, to a worthy person or a cause, and without expectation of return is considered to be charity in the mode of goodness.</string>
+    <string name="yoga_and_health_care">Yoga and Health Care</string>
+    <string name="university_for_humanity">University for Humanity</string>
+    <string name="ashram_and_child_care">Ashram and Child Care</string>
+    <string name="help_needy">Help Needy</string>
+    <string name="climate_change">Climate Change</string>
+    <string name="samskara_vidya">Samskara Vidya</string>
+    <string name="philosophy">Philosophy</string>
+    <string name="mission">Mission</string>
+    <string name="our_work">Our Work</string>
+    <string name="founder">Founder</string>
+    <string name="email_login">Log In with Email</string>
+    <string name="gmail_login">Log In with Gmail</string>
+    <string name="facebook_login">Log In with Facebook</string>
 </resources>
