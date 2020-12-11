@@ -17,15 +17,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void defineButtons() {
-        findViewById(R.id.log_in_button).setOnClickListener(buttonClickListener);
+        findViewById(R.id.log_in_sign_up).setOnClickListener(buttonClickListener);
     }
 
     private View.OnClickListener buttonClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             switch (view.getId()) {
-                case R.id.log_in_button:
-                    startActivity(new Intent(MainActivity.this, SignInActivity.class));
+                case R.id.log_in_sign_up:
+                    startActivity(new Intent(MainActivity.this,SignInActivity.class));
                     break;
             }
         }
