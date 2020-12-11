@@ -14,9 +14,9 @@ public class HomePageActivity extends MainActivity {
     }
 
     public void defineButton() {
-        findViewById(R.id.aboutmanavata).setOnClickListener(buttonClickListener);
-        findViewById(R.id.yoga).setOnClickListener(buttonClickListener);
-        findViewById(R.id.healthycooking).setOnClickListener(buttonClickListener);
+        findViewById(R.id.idAM).setOnClickListener(buttonClickListener);
+        findViewById(R.id.idY).setOnClickListener(buttonClickListener);
+        findViewById(R.id.idHC).setOnClickListener(buttonClickListener);
     }
 
     private View.OnClickListener buttonClickListener = new View.OnClickListener() {
