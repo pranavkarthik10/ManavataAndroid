@@ -22,11 +22,11 @@ public class SignInActivity extends MainActivity {
             }
         });
 
+        setContentView(R.layout.activity_sign_in);
         defineButtons();
     }
 
     public void defineButtons() {
-        findViewById(R.id.emailbutton).setOnClickListener(buttonClickListener);
         findViewById(R.id.googleemailbutton).setOnClickListener(buttonClickListener);
         findViewById(R.id.facebookbutton).setOnClickListener(buttonClickListener);
     }
@@ -40,9 +40,6 @@ public class SignInActivity extends MainActivity {
         @Override
         public void onClick (View view) {
             switch (view.getId()) {
-                case R.id.emailbutton:
-                    startActivity(new Intent(SignInActivity.this, EmailActivity.class));
-                    break;
                 case R.id.googleemailbutton:
                     startActivity(new Intent(SignInActivity.this, GoogleEmailActivity.class));
                     break;

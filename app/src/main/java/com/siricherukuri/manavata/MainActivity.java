@@ -29,4 +29,19 @@ public class MainActivity extends AppCompatActivity {
         Intent intentSI = new Intent(this, SignInActivity.class);
         startActivity(intentSI);
     }
+
+    public void defineButtons() {
+        findViewById(R.id.log_in_sign_up).setOnClickListener(buttonClickListener);
+    }
+
+    private View.OnClickListener buttonClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            switch (view.getId()) {
+                case R.id.log_in_sign_up:
+                    startActivity(new Intent(MainActivity.this,SignInActivity.class));
+                    break;
+            }
+        }
+    };
 }

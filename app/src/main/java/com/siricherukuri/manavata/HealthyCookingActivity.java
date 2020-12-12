@@ -1,4 +1,11 @@
 package com.siricherukuri.manavata;
 
-public class HealthyCookingActivity {
+import android.os.Bundle;
+
+public class HealthyCookingActivity extends MainActivity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_healthy_cooking);
+    }
 }
