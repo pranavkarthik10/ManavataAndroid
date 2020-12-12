@@ -40,13 +40,13 @@ public class HomeScreen extends AppCompatActivity {
         @Override
         public void onClick(View view) {
             switch (view.getId()) {
-                case R.id.aboutmanavata:
+                case R.id.idAM:
                     startActivity(new Intent(HomeScreen.this, AboutManavataActivity.class));
                     break;
-                case R.id.yoga:
+                case R.id.idY:
                     startActivity(new Intent(HomeScreen.this, YogaActivity.class));
                     break;
-                case R.id.healthycooking:
+                case R.id.idHC:
                     startActivity(new Intent(HomeScreen.this, HealthyCookingActivity.class));
                     break;
 
