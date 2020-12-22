@@ -4,6 +4,9 @@
 
     <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,7 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".lifecoachbutton"></activity>
+        <activity android:name=".lifecoachbutton" />
         <activity android:name=".HomeScreen" />
         <activity android:name=".WhoAreWeAcitivity" />
         <activity android:name=".WhatDoWeDoActivity" />
@@ -21,7 +24,6 @@
         <activity android:name=".MissionActivity" />
         <activity android:name=".FounderActivity" />
         <activity android:name=".AboutManavataActivity" />
-        <activity android:name=".HomePageActivity" />
         <activity android:name=".SignInActivity" />
         <activity android:name=".EmailActivity" />
         <activity android:name=".GoogleEmailActivity" />
@@ -33,6 +35,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id"/>
+
     </application>
 
 </manifest>

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "585417686729",
+    "project_id": "manavata-11578",
+    "storage_bucket": "manavata-11578.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:585417686729:android:b16113eef3f48836235718",
+        "android_client_info": {
+          "package_name": "com.siricherukuri.manavata"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "585417686729-eek2bl8plob932a20e14n60almmi5lvp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.siricherukuri.manavata",
+            "certificate_hash": "787df8ecde41a18d1be33cecd3e9cd81f2e24416"
+          }
+        },
+        {
+          "client_id": "585417686729-432pccbhj11soqvmatjj4k0ms687nvdg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDivzCTgwQCFZyPT_YBcTroz3qDwyb2O_M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "585417686729-432pccbhj11soqvmatjj4k0ms687nvdg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -7,4 +7,6 @@
     <color name="colorBlack">#000000</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorMission">#2196F3</color>
+    <color name="colorFacebook">#3e5b9b</color>
+    <color name="colorDashboard">#3b3b3b</color>
 </resources>
