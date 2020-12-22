@@ -3,9 +3,7 @@
     package="com.siricherukuri.manavata">
 
     <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
-
-    <uses-permission android:name="android.permission.INTERNET"/>
-
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -14,6 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".SunriseTime"></activity>
+        <activity android:name=".WakeUpTime" />
+        <activity android:name=".DailySchedulePage" />
         <activity android:name=".lifecoachbutton" />
         <activity android:name=".HomeScreen" />
         <activity android:name=".WhoAreWeAcitivity" />
@@ -36,9 +37,9 @@
             </intent-filter>
         </activity>
 
-        <meta-data android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id"/>
-
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
     </application>
 
 </manifest>
