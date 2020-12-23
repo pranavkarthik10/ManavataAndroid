@@ -8,6 +8,12 @@
     android:background="#1DA1F2"
     tools:context="com.siricherukuri.manavata.MainActivity">
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#26000000"/>
+
+
     <Button
         android:id="@+id/log_in_sign_up"
         android:layout_width="138dp"
