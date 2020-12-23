@@ -16,7 +16,7 @@ public class lifecoachbutton extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lifecoachbutton);
 
-        dailyschedbutton= (ImageButton) findViewById(R.id.dailyschedbutton);
+        dailyschedbutton = (ImageButton) findViewById(R.id.dailyschedbutton);
         dailyschedbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -28,4 +28,5 @@ public class lifecoachbutton extends AppCompatActivity {
     public void openDailySchedulePage() {
         Intent intentDS = new Intent(this, DailySchedulePage.class);
         startActivity(intentDS);
+    }
 }

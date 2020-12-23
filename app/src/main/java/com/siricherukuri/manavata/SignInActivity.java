@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,7 +17,6 @@ import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
-import com.facebook.appevents.AppEventsLogger;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -38,12 +36,15 @@ public class SignInActivity extends MainActivity {
     private ImageView mLogo;
     private LoginButton loginButton;
     private AccessTokenTracker accessTokenTracker;
+    private Button continueHome;
     private static String TAG = "FacebookAuthentication";
+    private Bundle savedInstanceState;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
+
 
         mFirebaseAuth = FirebaseAuth.getInstance();
         FacebookSdk.sdkInitialize(getApplicationContext());
@@ -96,62 +97,67 @@ public class SignInActivity extends MainActivity {
                 }
             }
         };
+
     }
 
-        private void handleFacebookToken (AccessToken token){
-            Log.d(TAG, "handleFacebookToken" + token);
+    }
 
-            AuthCredential credential = FacebookAuthProvider.getCredential(token.getToken());
-            mFirebaseAuth.signInWithCredential(credential).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if (task.isSuccessful()) {
-                        Log.d(TAG, "Sign in with credential: successful");
-                        FirebaseUser user = mFirebaseAuth.getCurrentUser();
-                        updateUI(user);
-                    } else {
-                        Log.d(TAG, "Sign in with credential: failure", task.getException());
-                        updateUI(null);
-                    }
-                }
-            });
+    private void handleFacebookToken(AccessToken token) {
+        Log.d(TAG, "handleFacebookToken" + token);
 
-
-        }
-
-        @Override
-        protected void onActivityResult ( int requestCode, int resultCode, @Nullable Intent data){
-            mCallBackManager.onActivityResult(requestCode, resultCode, data);
-            super.onActivityResult(requestCode, resultCode, data);
-        }
-
-        private void updateUI (FirebaseUser user){
-            if (user != null) {
-                textViewUser.setText(user.getDisplayName());
-                if (user.getPhotoUrl() != null) {
-                    String photoUrl = user.getPhotoUrl().toString();
-                    photoUrl = photoUrl + "?type=large";
-                    Picasso.get().load(photoUrl).into(mLogo);
+        AuthCredential credential = FacebookAuthProvider.getCredential(token.getToken());
+        mFirebaseAuth.signInWithCredential(credential).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    Log.d(TAG, "Sign in with credential: successful");
+                    FirebaseUser user = mFirebaseAuth.getCurrentUser();
+                    updateUI(user);
                 } else {
-                    textViewUser.setText("");
-                    mLogo.setImageResource(R.drawable.facebooklogo);
+                    Log.d(TAG, "Sign in with credential: failure", task.getException());
+                    updateUI(null);
                 }
             }
-        }
+        });
 
-        @Override
-        protected void onStart () {
-            super.onStart();
-            mFirebaseAuth.addAuthStateListener(authStateListener);
-        }
 
-        @Override
-        protected void onStop () {
-            super.onStop();
-            if (authStateListener != null) {
-                mFirebaseAuth.removeAuthStateListener(authStateListener);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        mCallBackManager.onActivityResult(requestCode, resultCode, data);
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    private void updateUI(FirebaseUser user) {
+        if (user != null) {
+            textViewUser.setText(user.getDisplayName());
+            if (user.getPhotoUrl() != null) {
+                String photoUrl = user.getPhotoUrl().toString();
+                photoUrl = photoUrl + "?type=large";
+                Picasso.get().load(photoUrl).into(mLogo);
+            } else {
+                textViewUser.setText("");
+                mLogo.setImageResource(R.drawable.facebooklogo);
             }
         }
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mFirebaseAuth.addAuthStateListener(authStateListener);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (authStateListener != null) {
+            mFirebaseAuth.removeAuthStateListener(authStateListener);
+        }
+    }
+
+
+}
 
 
