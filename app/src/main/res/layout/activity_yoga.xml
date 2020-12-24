@@ -3,13 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    tools:ignore="NamespaceTypo">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sabja Tulasi/Basil Seeds"
+        android:text="Yoga For Beginners"
         android:layout_marginTop="15dp"
         android:textColor="@color/colorBlack"
         android:textSize="25dp"/>
@@ -18,12 +21,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:showYouTubeButton="false"
-        app:videoId="D0IU3kwTFFQ" />
+        app:videoId="MKrHZB1sokA" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Green Chutney"
+        android:text="Effective for PCOD and Hormonal Imbalances"
         android:textColor="@color/colorBlack"
         android:layout_marginTop="15dp"
         android:textSize="25dp"/>
@@ -33,5 +36,50 @@
         android:layout_height="wrap_content"
         android:baselineAligned="false"
         app:showYouTubeButton="false"
-        app:videoId="FgJMLuHQ35g" />
+        app:videoId="VuBZAh2TXw8" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Improve Memory Power"
+        android:textColor="@color/colorBlack"
+        android:layout_marginTop="15dp"
+        android:textSize="25dp"/>
+
+    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        app:showYouTubeButton="false"
+        app:videoId="MaT_028dWDI" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Improve your Stamina"
+        android:textColor="@color/colorBlack"
+        android:layout_marginTop="15dp"
+        android:textSize="25dp"/>
+
+    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        app:showYouTubeButton="false"
+        app:videoId="ZmhnQy0hw7o" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Good Health"
+        android:textColor="@color/colorBlack"
+        android:layout_marginTop="15dp"
+        android:textSize="25dp"/>
+
+    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        app:showYouTubeButton="false"
+        app:videoId="opV3iT0kzvQ" />
 </LinearLayout>
