@@ -36,15 +36,14 @@ public class SignInActivity extends MainActivity {
     private ImageView mLogo;
     private LoginButton loginButton;
     private AccessTokenTracker accessTokenTracker;
-    private Button continueHome;
     private static String TAG = "FacebookAuthentication";
     private Bundle savedInstanceState;
+    private Button continueHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
-
 
         mFirebaseAuth = FirebaseAuth.getInstance();
         FacebookSdk.sdkInitialize(getApplicationContext());
@@ -73,6 +72,8 @@ public class SignInActivity extends MainActivity {
                 Log.d(TAG, "onError + error");
 
             }
+
+
         });
 
 
@@ -100,7 +101,7 @@ public class SignInActivity extends MainActivity {
 
     }
 
-    }
+
 
     private void handleFacebookToken(AccessToken token) {
         Log.d(TAG, "handleFacebookToken" + token);
@@ -119,8 +120,6 @@ public class SignInActivity extends MainActivity {
                 }
             }
         });
-
-
     }
 
     @Override

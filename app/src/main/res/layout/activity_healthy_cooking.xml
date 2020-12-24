@@ -1,6 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    tools:ignore="NamespaceTypo">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+    android:id="@+id/textView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Sabja Tulasi/Basil Seeds"
+    android:layout_marginTop="15dp"
+    android:textColor="@color/colorBlack"
+    android:textSize="25dp"/>
+
+    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:showYouTubeButton="false"
+        app:videoId="D0IU3kwTFFQ" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Green Chutney"
+        android:textColor="@color/colorBlack"
+        android:layout_marginTop="15dp"
+        android:textSize="25dp"/>
+
+    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        app:showYouTubeButton="false"
+        app:videoId="FgJMLuHQ35g" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Manavata Youtube Channel"
+        android:background="@color/colorYoutubeChannel"
+        android:textColor="@color/colorWhite"
+        android:textAllCaps="false"
+        android:layout_marginTop="30dp"
+        android:onClick="YoutubeChannel1"/>
+
+
+</LinearLayout>

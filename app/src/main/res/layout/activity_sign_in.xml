@@ -8,7 +8,7 @@
     <com.facebook.login.widget.LoginButton
         android:id="@+id/login_button_facebook"
         android:layout_width="208dp"
-        android:layout_height="47dp"
+        android:layout_height="56dp"
         android:layout_gravity="center_horizontal"
         android:background="@color/colorFacebook"
         android:text="Login with Facebook"
@@ -46,7 +46,7 @@
         app:srcCompat="@drawable/com_facebook_profile_picture_blank_square" />
 
     <Button
-        android:id="@+id/continue_to_home"
+        android:id="@+id/continueHome"
         android:layout_width="143dp"
         android:layout_height="39dp"
         android:background="@color/colorDashboard"
@@ -58,6 +58,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.935" />
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/login_button_google"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.528"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.725" />
+
+    <Button
+        android:id="@+id/logout_button_google"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log Out"
+        app:layout_constraintBottom_toBottomOf="@+id/continueHome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.877" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,7 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SunriseTime"></activity>
+        <activity android:name=".SnacksTime"></activity>
+        <activity android:name=".LunchTime" />
+        <activity android:name=".BreakfastTime" />
+        <activity android:name=".YogaTime" />
+        <activity android:name=".SunriseTime" />
         <activity android:name=".WakeUpTime" />
         <activity android:name=".DailySchedulePage" />
         <activity android:name=".lifecoachbutton" />
