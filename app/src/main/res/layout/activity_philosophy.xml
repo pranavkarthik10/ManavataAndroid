@@ -14,15 +14,16 @@
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
         android:text="@string/philosophy_title"
+        android:textAlignment="center"
         android:textColor="@color/colorBlack"
         android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/philosophyinfo2"
-        app:layout_constraintHorizontal_bias="0.125"
+        app:layout_constraintHorizontal_bias="0.63"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.028" />
+        app:layout_constraintVertical_bias="0.032" />
 
     <TextView
         android:id="@+id/philosophyinfo2"
@@ -34,12 +35,13 @@
         android:layout_centerInParent="true"
         android:ems="10"
         android:text="@string/philosophy_info"
+        android:textAlignment="center"
         android:textColor="@color/colorBlack"
         android:textSize="23sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintHorizontal_bias="0.554"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.612" />
+        app:layout_constraintVertical_bias="0.59" />
 </androidx.constraintlayout.widget.ConstraintLayout>

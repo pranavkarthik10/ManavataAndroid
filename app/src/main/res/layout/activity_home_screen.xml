@@ -16,7 +16,7 @@
         android:layout_width="375dp"
         android:layout_height="70dp"
         android:background="@drawable/roundedcornerspf"
-        android:text="Provide Feedback"
+        android:text="Welcome "
         android:textAllCaps="false"
         android:textColor="#F3EFEF"
         android:textIsSelectable="false"

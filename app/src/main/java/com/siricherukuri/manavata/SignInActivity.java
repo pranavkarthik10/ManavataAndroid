@@ -38,20 +38,12 @@ public class SignInActivity extends MainActivity {
     private AccessTokenTracker accessTokenTracker;
     private static String TAG = "FacebookAuthentication";
     private Bundle savedInstanceState;
-    private Button continueHome;
+    private FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
-
-        continueHome = (Button) findViewById(R.id.continueHome);
-        continueHome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openHomeScreen();
-            }
-        });
 
         mFirebaseAuth = FirebaseAuth.getInstance();
         FacebookSdk.sdkInitialize(getApplicationContext());
@@ -109,8 +101,9 @@ public class SignInActivity extends MainActivity {
 
     }
 
-    public void openHomeScreen() {
+    public void openHomeScreen(String userDisplayName) {
         Intent intentHS = new Intent(this, HomeScreen.class);
+        intentHS.putExtra("userDisplayName", userDisplayName);
         startActivity(intentHS);
     }
 
@@ -125,8 +118,10 @@ public class SignInActivity extends MainActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     Log.d(TAG, "Sign in with credential: successful");
-                    FirebaseUser user = mFirebaseAuth.getCurrentUser();
+                    user = mFirebaseAuth.getCurrentUser();
                     updateUI(user);
+
+                    openHomeScreen(user.getDisplayName());
                 } else {
                     Log.d(TAG, "Sign in with credential: failure", task.getException());
                     updateUI(null);

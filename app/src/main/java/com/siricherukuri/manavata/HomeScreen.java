@@ -13,6 +13,7 @@ public class HomeScreen extends MainActivity {
     private Button idAM;
     private Button idY;
     private Button idHC;
+    private Button idPF;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,8 @@ public class HomeScreen extends MainActivity {
                 openLifeCoachButton();
             }
         });
+        idPF = findViewById(R.id.idPF);
+        idPF.setText("Welcome " + getIntent().getStringExtra("userDisplayName"));
 
         idAM = findViewById(R.id.idAM);
         idAM.setOnClickListener(new View.OnClickListener() {
