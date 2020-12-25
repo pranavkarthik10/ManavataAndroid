@@ -23,9 +23,9 @@ public class HomeScreen extends MainActivity {
                 openLifeCoachButton();
             }
         });
-        defineButton();
+        defineButtons1();
     }
-    public void defineButton() {
+    public void defineButtons1() {
         findViewById(R.id.idAM).setOnClickListener(buttonClickListener);
         findViewById(R.id.idY).setOnClickListener(buttonClickListener);
         findViewById(R.id.idHC).setOnClickListener(buttonClickListener);

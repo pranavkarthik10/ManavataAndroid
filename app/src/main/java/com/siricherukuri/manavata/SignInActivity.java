@@ -45,6 +45,14 @@ public class SignInActivity extends MainActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
+        continueHome = (Button) findViewById(R.id.continueHome);
+        continueHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openHomeScreen();
+            }
+        });
+
         mFirebaseAuth = FirebaseAuth.getInstance();
         FacebookSdk.sdkInitialize(getApplicationContext());
 
@@ -99,6 +107,11 @@ public class SignInActivity extends MainActivity {
             }
         };
 
+    }
+
+    public void openHomeScreen() {
+        Intent intentHS = new Intent(this, HomeScreen.class);
+        startActivity(intentHS);
     }
 
 

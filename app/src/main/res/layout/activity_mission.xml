@@ -14,52 +14,52 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:text="@string/mission_info"
+        android:textAlignment="center"
         android:textColor="@color/colorBlack"
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.296"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.739" />
+        app:layout_constraintVertical_bias="0.567" />
 
     <TextView
         android:id="@+id/mission"
-        android:layout_width="326dp"
-        android:layout_height="162dp"
+        android:layout_width="355dp"
+        android:layout_height="146dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
-        android:text="@string/mission_blue"
-        android:textAllCaps="true"
+        android:text="We Believe Every Person Deserves The Choice To Live With Dignity Not Dependence"
+        android:textAlignment="center"
+        android:textAllCaps="false"
         android:textColor="@color/colorMission"
-        android:textSize="27sp"
+        android:textSize="23sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.247"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.209" />
+        app:layout_constraintVertical_bias="0.173" />
 
     <TextView
         android:id="@+id/missionTitle"
-        android:layout_width="337dp"
-        android:layout_height="139dp"
+        android:layout_width="331dp"
+        android:layout_height="63dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
         android:text="@string/mission_title"
+        android:textAlignment="center"
         android:textColor="@color/colorBlack"
         android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.283"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.047" />
+        app:layout_constraintVertical_bias="0.057" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
