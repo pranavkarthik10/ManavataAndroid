@@ -1,85 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     tools:context=".MainActivity"
     tools:ignore="NamespaceTypo">
 
-    <TextView
-        android:id="@+id/textView"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Yoga For Beginners"
-        android:layout_marginTop="15dp"
-        android:textColor="@color/colorBlack"
-        android:textSize="25dp"/>
+        android:layout_height="wrap_content">
 
-    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:showYouTubeButton="false"
-        app:videoId="MKrHZB1sokA" />
+        <TextView
+            android:id="@+id/YFB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Yoga For Beginners"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/colorBlack"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/YFBVIDEO"
+            android:textSize="25dp"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Effective for PCOD and Hormonal Imbalances"
-        android:textColor="@color/colorBlack"
-        android:layout_marginTop="15dp"
-        android:textSize="25dp"/>
+        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/YFBVIDEO"
+            app:showYouTubeButton="false"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/YFB"
+            app:layout_constraintBottom_toTopOf="@id/PCOD"
+            app:videoId="MKrHZB1sokA" />
 
-    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:baselineAligned="false"
-        app:showYouTubeButton="false"
-        app:videoId="VuBZAh2TXw8" />
+        <TextView
+            android:id="@+id/PCOD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Effective for PCOD and Hormonal Imbalances"
+            android:textColor="@color/colorBlack"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/YFBVIDEO"
+            app:layout_constraintBottom_toTopOf="@id/PCODVIDEO"
+            android:layout_marginTop="15dp"
+            android:textSize="25dp"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Improve Memory Power"
-        android:textColor="@color/colorBlack"
-        android:layout_marginTop="15dp"
-        android:textSize="25dp"/>
+        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+            android:id="@+id/PCODVIDEO"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/PCOD"
+            app:layout_constraintBottom_toTopOf="@id/IMP"
+            app:showYouTubeButton="false"
+            app:videoId="VuBZAh2TXw8" />
 
-    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:baselineAligned="false"
-        app:showYouTubeButton="false"
-        app:videoId="MaT_028dWDI" />
+        <TextView
+            android:id="@+id/IMP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Improve Memory Power"
+            android:textColor="@color/colorBlack"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/IMPVIDEO"
+            app:layout_constraintTop_toBottomOf="@id/PCODVIDEO"
+            android:layout_marginTop="15dp"
+            android:textSize="25dp"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Improve your Stamina"
-        android:textColor="@color/colorBlack"
-        android:layout_marginTop="15dp"
-        android:textSize="25dp"/>
+        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+            android:id="@+id/IMPVIDEO"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/IMP"
+            app:layout_constraintBottom_toTopOf="@id/STAMINA"
+            app:showYouTubeButton="false"
+            app:videoId="MaT_028dWDI" />
 
-    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:baselineAligned="false"
-        app:showYouTubeButton="false"
-        app:videoId="ZmhnQy0hw7o" />
+        <TextView
+            android:id="@+id/STAMINA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Improve your Stamina"
+            android:textColor="@color/colorBlack"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/STAMINAVIDEO"
+            app:layout_constraintTop_toBottomOf="@id/IMPVIDEO"
+            android:layout_marginTop="15dp"
+            android:textSize="25dp"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Good Health"
-        android:textColor="@color/colorBlack"
-        android:layout_marginTop="15dp"
-        android:textSize="25dp"/>
+        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+            android:id="@+id/STAMINAVIDEO"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/STAMINA"
+            app:layout_constraintBottom_toTopOf="@id/GH"
+            android:baselineAligned="false"
+            app:showYouTubeButton="false"
+            app:videoId="ZmhnQy0hw7o" />
 
-    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:baselineAligned="false"
-        app:showYouTubeButton="false"
-        app:videoId="opV3iT0kzvQ" />
-</LinearLayout>
+        <TextView
+            android:id="@+id/GH"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/GHVIDEO"
+            app:layout_constraintTop_toBottomOf="@id/STAMINAVIDEO"
+            android:text="Good Health"
+            android:textColor="@color/colorBlack"
+            android:layout_marginTop="15dp"
+            android:textSize="25dp"/>
+
+        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+            android:id="@+id/GHVIDEO"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/GH"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:baselineAligned="false"
+            app:showYouTubeButton="false"
+            app:videoId="opV3iT0kzvQ" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
