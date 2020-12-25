@@ -75,14 +75,18 @@ public class DailySchedulePage extends AppCompatActivity {
     }
     public void openYogaTime(){
         Intent intentYT = new Intent(this, YogaTime.class);
+        startActivity(intentYT);
     }
     public void openBreakfastTime(){
         Intent intentBT = new Intent(this, BreakfastTime.class);
+        startActivity(intentBT);
     }
     public void openLunchTime(){
         Intent intentLT = new Intent(this, LunchTime.class);
+        startActivity(intentLT);
     }
     public void openSnacksTime(){
         Intent intentST = new Intent(this, SnacksTime.class);
+        startActivity(intentST);
     }
 }

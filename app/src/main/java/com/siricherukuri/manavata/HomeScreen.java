@@ -10,6 +10,9 @@ import android.widget.Button;
 public class HomeScreen extends MainActivity {
 
     private Button idLC;
+    private Button idAM;
+    private Button idY;
+    private Button idHC;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,34 +26,48 @@ public class HomeScreen extends MainActivity {
                 openLifeCoachButton();
             }
         });
-        defineButtons1();
-    }
-    public void defineButtons1() {
-        findViewById(R.id.idAM).setOnClickListener(buttonClickListener);
-        findViewById(R.id.idY).setOnClickListener(buttonClickListener);
-        findViewById(R.id.idHC).setOnClickListener(buttonClickListener);
-    }
 
+        idAM = findViewById(R.id.idAM);
+        idAM.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openAboutManavata();
+            }
+        });
+
+        idY = findViewById(R.id.idY);
+        idY.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openYoga();
+            }
+        });
+
+        idHC = findViewById(R.id.idHC);
+        idHC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openHealthyCooking();
+            }
+        });
+
+    }
     public void openLifeCoachButton() {
         Intent intentLC = new Intent(this, lifecoachbutton.class);
         startActivity(intentLC);
     }
-    private View.OnClickListener buttonClickListener = new View.OnClickListener() {
 
-        @Override
-        public void onClick(View view) {
-            switch (view.getId()) {
-                case R.id.idAM:
-                    startActivity(new Intent(HomeScreen.this, AboutManavataActivity.class));
-                    break;
-                case R.id.idY:
-                    startActivity(new Intent(HomeScreen.this, YogaActivity.class));
-                    break;
-                case R.id.idHC:
-                    startActivity(new Intent(HomeScreen.this, HealthyCookingActivity.class));
-                    break;
+    public void openAboutManavata() {
+        Intent intentAM = new Intent(this, AboutManavataActivity.class);
+        startActivity(intentAM);
+    }
+    public void openYoga() {
+        Intent intentY = new Intent(this, YogaActivity.class);
+        startActivity(intentY);
+    }
+    public void openHealthyCooking() {
+        Intent intentHC = new Intent(this, HealthyCookingActivity.class);
+        startActivity(intentHC);
+    }
 
-            }
-        }
-    };
 }
