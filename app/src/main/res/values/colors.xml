@@ -10,5 +10,7 @@
     <color name="colorFacebook">#3e5b9b</color>
     <color name="colorDashboard">#3b3b3b</color>
     <color name="colorYoutubeChannel">#B83B2A</color>
+    <color name="colorHomeScreen1">#3254c4</color>
+    <color name="colorHomeScreen2">#00e6ff</color>
 
 </resources>

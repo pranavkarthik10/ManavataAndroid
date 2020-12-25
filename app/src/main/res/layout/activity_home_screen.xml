@@ -32,7 +32,7 @@
         android:layout_width="185dp"
         android:layout_height="230dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/roundedcornersmainbuttons"
+        android:background="@drawable/gradient_home_screen_buttons"
         android:text="Life Coach"
         android:textColor="@color/colorWhite"
         android:textAllCaps="false"
