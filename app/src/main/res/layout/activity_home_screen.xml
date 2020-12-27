@@ -131,8 +131,8 @@
 
     <ImageView
         android:id="@+id/hcbowl"
-        android:layout_width="68dp"
-        android:layout_height="35dp"
+        android:layout_width="76dp"
+        android:layout_height="63dp"
         android:elevation="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/idHC"
@@ -140,7 +140,7 @@
         app:layout_constraintStart_toStartOf="@+id/idHC"
         app:layout_constraintTop_toTopOf="@+id/idHC"
         app:layout_constraintVertical_bias="0.918"
-        app:srcCompat="@drawable/ic_vector_43" />
+        app:srcCompat="@drawable/ic_healthy_cooking" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
