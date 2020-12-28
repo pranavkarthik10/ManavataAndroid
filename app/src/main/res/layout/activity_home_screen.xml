@@ -105,15 +105,13 @@
         android:id="@+id/yogaimage"
         android:layout_width="65dp"
         android:layout_height="60dp"
-        android:layout_marginTop="130dp"
-        android:layout_marginBottom="40dp"
         android:elevation="2dp"
         app:layout_constraintBottom_toBottomOf="@+id/idY"
         app:layout_constraintEnd_toEndOf="@+id/idY"
-        app:layout_constraintHorizontal_bias="0.808"
+        app:layout_constraintHorizontal_bias="0.891"
         app:layout_constraintStart_toStartOf="@+id/idY"
         app:layout_constraintTop_toTopOf="@+id/idY"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.929"
         app:srcCompat="@drawable/ic_group_77" />
 
     <ImageView
