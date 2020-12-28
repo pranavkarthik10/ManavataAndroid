@@ -1,13 +1,19 @@
 package com.siricherukuri.manavata;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 
 public class DailySchedulePage extends AppCompatActivity {
+
+    RecyclerView mrecyclerView;
+    RecyclerAdapter recyclerAdapter;
 
     private ImageButton sunrisebutton;
     private ImageButton wakeupbutton;
@@ -21,42 +27,47 @@ public class DailySchedulePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_schedule_page);
 
-        wakeupbutton= (ImageButton) findViewById(R.id.wakeupbutton);
+        mrecyclerView = findViewById(R.id.DSRecyclerView);
+        recyclerAdapter = new RecyclerAdapter();
+        //mrecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mrecyclerView.setAdapter(recyclerAdapter);
+
+        //wakeupbutton= (ImageButton) findViewById(R.id.wakeupbutton);
         wakeupbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openWakeUpTime();
             }
         });
-        sunrisebutton= (ImageButton) findViewById(R.id.sunrisebutton);
+        //sunrisebutton= (ImageButton) findViewById(R.id.sunrisebutton);
         sunrisebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openSunriseTime();
             }
         });
-        yogatimebutton = (ImageButton) findViewById(R.id.yogatimebutton);
+        //yogatimebutton = (ImageButton) findViewById(R.id.yogatimebutton);
         yogatimebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openYogaTime();
             }
         });
-        breakfastbutton = (ImageButton) findViewById(R.id.breakfastbutton);
+       //breakfastbutton = (ImageButton) findViewById(R.id.breakfastbutton);
         breakfastbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openBreakfastTime();
             }
         });
-        lunchbutton= (ImageButton) findViewById(R.id.lunchbutton);
+        //lunchbutton= (ImageButton) findViewById(R.id.lunchbutton);
         lunchbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openLunchTime();
             }
         });
-        snacksbutton = (ImageButton) findViewById(R.id.snacksbutton);
+        //snacksbutton = (ImageButton) findViewById(R.id.snacksbutton);
         snacksbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
