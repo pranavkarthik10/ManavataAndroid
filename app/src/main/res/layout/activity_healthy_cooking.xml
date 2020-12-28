@@ -46,7 +46,8 @@
         android:background="@color/colorYoutubeChannel"
         android:textColor="@color/colorWhite"
         android:textAllCaps="false"
-        android:layout_marginTop="30dp"
+        android:textSize="20sp"
+        android:layout_marginTop="40dp"
         android:onClick="YoutubeChannel1"/>
 
 

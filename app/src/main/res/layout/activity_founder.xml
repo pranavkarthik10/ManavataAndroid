@@ -66,6 +66,7 @@
         android:layout_centerHorizontal="true"
         android:background="@color/colorMission"
         android:text="@string/read_more_button"
+        android:onClick="FounderClick"
         android:textAllCaps="false"
         android:textColor="@color/colorWhite"
         app:layout_constraintBottom_toBottomOf="parent"
