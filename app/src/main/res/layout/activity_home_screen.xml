@@ -13,19 +13,18 @@
 
     <Button
         android:id="@+id/idPF"
-        android:layout_width="375dp"
+        android:layout_width="379dp"
         android:layout_height="70dp"
         android:background="@drawable/roundedcornerspf"
-        android:text="Welcome "
         android:textAllCaps="false"
         android:textColor="#F3EFEF"
         android:textIsSelectable="false"
+        android:textSize="19dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.524"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.125" />
+        app:layout_constraintVertical_bias="0.116" />
 
     <Button
         android:id="@+id/idLC"
@@ -106,54 +105,55 @@
 
     <ImageView
         android:id="@+id/lifecoachimage"
-        android:layout_width="59dp"
-        android:layout_height="63dp"
+        android:layout_width="91dp"
+        android:layout_height="110dp"
         android:elevation="2dp"
         app:layout_constraintBottom_toBottomOf="@+id/idLC"
         app:layout_constraintEnd_toEndOf="@+id/idLC"
-        app:layout_constraintHorizontal_bias="0.944"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/idLC"
         app:layout_constraintTop_toTopOf="@+id/idLC"
-        app:layout_constraintVertical_bias="0.928"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/ic_group_76" />
 
     <ImageView
         android:id="@+id/yogaimage"
-        android:layout_width="65dp"
-        android:layout_height="60dp"
+        android:layout_width="110dp"
+        android:layout_height="131dp"
+        android:layout_marginTop="124dp"
         android:elevation="2dp"
-        app:layout_constraintBottom_toBottomOf="@+id/idY"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/idY"
-        app:layout_constraintHorizontal_bias="0.891"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/idY"
         app:layout_constraintTop_toTopOf="@+id/idY"
-        app:layout_constraintVertical_bias="0.929"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/ic_group_77" />
 
     <ImageView
         android:id="@+id/aboutmanavataimage"
-        android:layout_width="56dp"
-        android:layout_height="61dp"
+        android:layout_width="97dp"
+        android:layout_height="112dp"
         android:elevation="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/idAM"
         app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toStartOf="@+id/idAM"
         app:layout_constraintTop_toTopOf="@+id/idAM"
-        app:layout_constraintVertical_bias="0.905"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/ic_group_12" />
 
     <ImageView
         android:id="@+id/hcbowl"
-        android:layout_width="76dp"
-        android:layout_height="63dp"
+        android:layout_width="102dp"
+        android:layout_height="92dp"
         android:elevation="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/idHC"
-        app:layout_constraintHorizontal_bias="0.89"
+        app:layout_constraintHorizontal_bias="0.989"
         app:layout_constraintStart_toStartOf="@+id/idHC"
         app:layout_constraintTop_toTopOf="@+id/idHC"
-        app:layout_constraintVertical_bias="0.918"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/ic_healthy_cooking" />
 
 
