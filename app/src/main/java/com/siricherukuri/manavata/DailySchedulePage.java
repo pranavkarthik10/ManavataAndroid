@@ -12,6 +12,8 @@ import android.widget.LinearLayout;
 
 public class DailySchedulePage extends AppCompatActivity {
 
+
+
     RecyclerView mrecyclerView;
     RecyclerAdapter recyclerAdapter;
 
@@ -32,7 +34,7 @@ public class DailySchedulePage extends AppCompatActivity {
         //mrecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mrecyclerView.setAdapter(recyclerAdapter);
 
-        //wakeupbutton= (ImageButton) findViewById(R.id.wakeupbutton);
+        /*wakeupbutton= (ImageButton) findViewById(R.id.wakeupbutton);
         wakeupbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,6 +76,8 @@ public class DailySchedulePage extends AppCompatActivity {
                 openSnacksTime();
             }
         });
+
+         */
     }
 
     public void openWakeUpTime(){

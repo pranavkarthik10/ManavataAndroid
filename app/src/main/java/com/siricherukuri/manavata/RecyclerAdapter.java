@@ -4,6 +4,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -37,8 +38,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
     class ViewHolder extends RecyclerView.ViewHolder {
 
+        ImageButton alarmholder;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+
+            alarmholder = itemView.findViewById(R.id.alarmholder);
         }
     }
 }
