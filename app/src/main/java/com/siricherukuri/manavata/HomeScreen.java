@@ -1,11 +1,15 @@
 package com.siricherukuri.manavata;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toolbar;
+
+import com.google.android.material.navigation.NavigationView;
 
 public class HomeScreen extends MainActivity {
 
@@ -14,11 +18,18 @@ public class HomeScreen extends MainActivity {
     private Button idY;
     private Button idHC;
     private Button idPF;
+    DrawerLayout drawerLayout;
+    NavigationView navigationView;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
+
+        drawerLayout = findViewById(R.id.homescreendrawerlayout);
+        navigationView = findViewById(R.id.nav_view);
+         toolbar = findViewById(R.id.toolbar);
 
         idLC = findViewById(R.id.idLC);
         idLC.setOnClickListener(new View.OnClickListener() {

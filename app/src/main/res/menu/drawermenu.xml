@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
 
-    <item android:id="@+id/logout" android:title="Logout" android:icon="@drawable/ic_logout"/>
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_lifecoach"
+            android:icon="@drawable/ic_baseline_alarm_24"
+            android:title="Life Coach" />
+
+        <item
+            android:id="@+id/nav_yoga"
+            android:title="Yoga" />
+
+        <item
+            android:id="@+id/nav_healthycooking"
+            android:title="Healthy Cooking" />
+
+        <item
+            android:id="@+id/nav_manavata"
+            android:title="About Manavata" />
+
+    </group>
+
+    <group android:checkableBehavior="single">
+
+        <item android:title="Options">
+
+            <menu>
+
+                <item
+                    android:id="@+id/nav_signout"
+                    android:icon="@drawable/ic_signout"
+                    android:title="Sign Out" />
+            </menu>
+
+        </item>
+    </group>
+
+
 
 </menu>
