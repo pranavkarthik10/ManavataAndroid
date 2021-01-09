@@ -26,11 +26,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <include
-            android:id="@+id/toolbar"
-            layout="@layout/toolbar"
-            app:navigationIcon="@drawable/ic_menu">
-        </include>
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/rohanstoolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:minHeight="?attr/actionBarSize"
+            app:navigationIcon="@drawable/ic_menu"
+            app:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
         <Button
             android:id="@+id/idPF"
             android:layout_width="379dp"

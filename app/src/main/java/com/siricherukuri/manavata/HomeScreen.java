@@ -1,5 +1,6 @@
 package com.siricherukuri.manavata;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -29,7 +30,13 @@ public class HomeScreen extends MainActivity {
 
         drawerLayout = findViewById(R.id.homescreendrawerlayout);
         navigationView = findViewById(R.id.nav_view);
-         toolbar = findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.rohanstoolbar);
+
+
+        setSupportActionBar(toolbar);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
 
         idLC = findViewById(R.id.idLC);
         idLC.setOnClickListener(new View.OnClickListener() {
