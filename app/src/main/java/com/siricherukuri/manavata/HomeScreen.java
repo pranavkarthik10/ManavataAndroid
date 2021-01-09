@@ -1,18 +1,21 @@
 package com.siricherukuri.manavata;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class HomeScreen extends MainActivity {
+public class HomeScreen extends MainActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private Button idLC;
     private Button idAM;
@@ -34,9 +37,13 @@ public class HomeScreen extends MainActivity {
 
 
         setSupportActionBar(toolbar);
+
+        navigationView.bringToFront();
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+
+        navigationView.setNavigationItemSelectedListener(this);
 
         idLC = findViewById(R.id.idLC);
         idLC.setOnClickListener(new View.OnClickListener() {
@@ -73,6 +80,18 @@ public class HomeScreen extends MainActivity {
         });
 
     }
+
+    @Override
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)){
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
+        else {
+            super.onBackPressed();
+        }
+
+    }
+
     public void openLifeCoachButton() {
         Intent intentLC = new Intent(this, lifecoachbutton.class);
         startActivity(intentLC);
@@ -91,4 +110,8 @@ public class HomeScreen extends MainActivity {
         startActivity(intentHC);
     }
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        return true;
+    }
 }
