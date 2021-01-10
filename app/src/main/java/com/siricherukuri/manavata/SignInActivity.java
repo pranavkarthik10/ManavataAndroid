@@ -243,10 +243,6 @@ public class SignInActivity extends MainActivity {
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
         if(account != null){
             String personName = account.getDisplayName();
-            String personGivenName = account.getGivenName();
-            String personFamilyName = account.getFamilyName();
-            String personEmail = account.getEmail();
-            String personId = account.getId();
             Uri personPhoto = account.getPhotoUrl();
 
             Toast.makeText(SignInActivity.this, personName + personPhoto, Toast.LENGTH_SHORT).show();

@@ -1,26 +1,49 @@
 package com.siricherukuri.manavata;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;git
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
+import androidx.appcompat.widget.Toolbar;
 
-public class HomeScreen extends MainActivity {
+import com.google.android.material.navigation.NavigationView;
+
+public class HomeScreen extends MainActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private Button idLC;
     private Button idAM;
     private Button idY;
     private Button idHC;
     private Button idPF;
-    private ImageView contactUs;
+
+    DrawerLayout drawerLayout;
+    NavigationView navigationView;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
+
+        drawerLayout = findViewById(R.id.homescreendrawerlayout);
+        navigationView = findViewById(R.id.nav_view);
+        toolbar = findViewById(R.id.rohanstoolbar);
+
+
+        setSupportActionBar(toolbar);
+
+        navigationView.bringToFront();
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
+        navigationView.setNavigationItemSelectedListener(this);
 
         idLC = findViewById(R.id.idLC);
         idLC.setOnClickListener(new View.OnClickListener() {
@@ -31,7 +54,7 @@ public class HomeScreen extends MainActivity {
         });
 
         idPF = findViewById(R.id.idPF);
-        idPF.setText("Welcome " + getIntent().getStringExtra("userDisplayName" + "!"));
+        idPF.setText("Welcome " + getIntent().getStringExtra("userDisplayName"));
 
         idAM = findViewById(R.id.idAM);
         idAM.setOnClickListener(new View.OnClickListener() {
@@ -56,16 +79,19 @@ public class HomeScreen extends MainActivity {
                 openHealthyCooking();
             }
         });
+    }
 
-        contactUs = findViewById(R.id.contact_us_button);
-        contactUs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view){
-                openContactUsButton();
-            }
-        });
+    @Override
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)){
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
+        else {
+            super.onBackPressed();
+        }
 
     }
+
     public void openLifeCoachButton() {
         Intent intentLC = new Intent(this, lifecoachbutton.class);
         startActivity(intentLC);
@@ -83,9 +109,9 @@ public class HomeScreen extends MainActivity {
         Intent intentHC = new Intent(this, HealthyCookingActivity.class);
         startActivity(intentHC);
     }
-    public void openContactUsButton() {
-        Intent intentCU = new Intent(this, ContactUsActivity.class);
-        startActivity(intentCU);
-    }
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        return true;
+    }
 }
