@@ -112,6 +112,35 @@ public class HomeScreen extends MainActivity implements NavigationView.OnNavigat
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+
+        switch (menuItem.getItemId()){
+            case  R.id.nav_lifecoach:
+                Intent intentnLC = new Intent(HomeScreen.this,lifecoachbutton.class);
+                startActivity(intentnLC);
+                break;
+
+            case  R.id.nav_yoga:
+                Intent intentnY = new Intent(HomeScreen.this,YogaActivity.class);
+                startActivity(intentnY);
+                break;
+
+            case  R.id.nav_healthycooking:
+                Intent intentnHC = new Intent(HomeScreen.this,HealthyCookingActivity.class);
+                startActivity(intentnHC);
+                break;
+
+            case  R.id.nav_manavata:
+                Intent intentnAM = new Intent(HomeScreen.this,AboutManavataActivity.class);
+                startActivity(intentnAM);
+                break;
+
+            case  R.id.nav_contact:
+                Intent intentnC = new Intent(HomeScreen.this,ContactUsActivity.class);
+                startActivity(intentnC);
+                break;
+
+        }
+
         return true;
     }
 }
