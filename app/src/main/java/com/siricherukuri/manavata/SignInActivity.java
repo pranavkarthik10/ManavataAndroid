@@ -60,7 +60,6 @@ public class SignInActivity extends MainActivity {
     private Button mbypass;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,7 +69,7 @@ public class SignInActivity extends MainActivity {
         mbypass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent (SignInActivity.this, HomeScreen.class);
+                Intent i = new Intent(SignInActivity.this, HomeScreen.class);
                 startActivity(i);
             }
         });
@@ -89,6 +88,15 @@ public class SignInActivity extends MainActivity {
                 Log.d(TAG, "onSuccess" + loginResult);
                 handleFacebookToken(loginResult.getAccessToken());
 
+                loginButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent facebook = new Intent(SignInActivity.this, HomeScreen.class);
+                        startActivity(facebook);
+
+
+                    }
+                });
             }
 
             @Override
@@ -129,12 +137,13 @@ public class SignInActivity extends MainActivity {
             }
         };
 
+
         signInButton = findViewById(R.id.login_button_google);
         mAuth = FirebaseAuth.getInstance();
         btnSignOut = findViewById(R.id.log_out_google);
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id) )
+                .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
 
@@ -142,27 +151,22 @@ public class SignInActivity extends MainActivity {
 
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
+            public void onClick(View view) {
                 signIn();
             }
         });
+
 
         btnSignOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mGoogleSignInClient.signOut();
                 Toast.makeText(SignInActivity.this, "You are Logged Out", Toast.LENGTH_SHORT).show();
-                btnSignOut.setVisibility(View.INVISIBLE);
             }
         });
 
     }
 
-    public void openHomeScreen(String userDisplayName) {
-        Intent intentHS = new Intent(this, HomeScreen.class);
-        intentHS.putExtra("userDisplayName", userDisplayName);
-        startActivity(intentHS);
-    }
 
     private void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
@@ -190,6 +194,11 @@ public class SignInActivity extends MainActivity {
         }
 
     }
+    public void openHomeScreen(String userDisplayName) {
+        Intent intentHS = new Intent(SignInActivity.this, HomeScreen.class);
+        intentHS.putExtra("userDisplayName", userDisplayName);
+        startActivity(intentHS);
+    }
 
     private void FirebaseGoogleAuth(GoogleSignInAccount acct){
         AuthCredential authCredential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
@@ -202,6 +211,7 @@ public class SignInActivity extends MainActivity {
                     updateUI(user);
 
                     openHomeScreen(user.getDisplayName());
+
                 }
                 else{
                     Toast.makeText(SignInActivity.this, "Failed", Toast.LENGTH_SHORT).show();
@@ -273,9 +283,6 @@ public class SignInActivity extends MainActivity {
             mFirebaseAuth.removeAuthStateListener(authStateListener);
         }
     }
-
-
-
 
 }
 

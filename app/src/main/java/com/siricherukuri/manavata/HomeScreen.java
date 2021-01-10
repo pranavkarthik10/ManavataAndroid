@@ -10,8 +10,13 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
 import androidx.appcompat.widget.Toolbar;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.material.navigation.NavigationView;
 
 public class HomeScreen extends MainActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -21,6 +26,8 @@ public class HomeScreen extends MainActivity implements NavigationView.OnNavigat
     private Button idY;
     private Button idHC;
     private Button idPF;
+    private Button nav_signout;
+    private GoogleSignInClient mGoogleSignInClient;
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
@@ -140,7 +147,8 @@ public class HomeScreen extends MainActivity implements NavigationView.OnNavigat
                 break;
 
             case R.id.nav_signout:
-                //type the signout code here
+                Intent intentnSO = new Intent(HomeScreen.this,MainActivity.class);
+                startActivity(intentnSO);
                 break;
 
         }
