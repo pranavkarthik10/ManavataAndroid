@@ -57,12 +57,23 @@ public class SignInActivity extends MainActivity {
     private Button btnSignOut;
     private int RC_SIGN_IN = 1;
 
+    private Button mbypass;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
+
+        mbypass = findViewById(R.id.bypass);
+        mbypass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent (SignInActivity.this, HomeScreen.class);
+                startActivity(i);
+            }
+        });
 
         mFirebaseAuth = FirebaseAuth.getInstance();
         FacebookSdk.sdkInitialize(getApplicationContext());
@@ -266,6 +277,8 @@ public class SignInActivity extends MainActivity {
             mFirebaseAuth.removeAuthStateListener(authStateListener);
         }
     }
+
+
 
 
 }
