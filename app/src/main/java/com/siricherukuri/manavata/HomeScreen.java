@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class HomeScreen extends MainActivity {
 
@@ -14,6 +15,7 @@ public class HomeScreen extends MainActivity {
     private Button idY;
     private Button idHC;
     private Button idPF;
+    private ImageView contactUs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +29,9 @@ public class HomeScreen extends MainActivity {
                 openLifeCoachButton();
             }
         });
+
         idPF = findViewById(R.id.idPF);
-        idPF.setText("Welcome " + getIntent().getStringExtra("userDisplayName"));
+        idPF.setText("Welcome " + getIntent().getStringExtra("userDisplayName" + "!"));
 
         idAM = findViewById(R.id.idAM);
         idAM.setOnClickListener(new View.OnClickListener() {
@@ -54,6 +57,14 @@ public class HomeScreen extends MainActivity {
             }
         });
 
+        contactUs = findViewById(R.id.contact_us_button);
+        contactUs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view){
+                openContactUsButton();
+            }
+        });
+
     }
     public void openLifeCoachButton() {
         Intent intentLC = new Intent(this, lifecoachbutton.class);
@@ -71,6 +82,10 @@ public class HomeScreen extends MainActivity {
     public void openHealthyCooking() {
         Intent intentHC = new Intent(this, HealthyCookingActivity.class);
         startActivity(intentHC);
+    }
+    public void openContactUsButton() {
+        Intent intentCU = new Intent(this, ContactUsActivity.class);
+        startActivity(intentCU);
     }
 
 }

@@ -16,6 +16,7 @@
         <activity android:name=".LunchTime" />
         <activity android:name=".BreakfastTime" />
         <activity android:name=".YogaTime" />
+        <activity android:name=".ContactUsActivity"/>
         <activity android:name=".YogaActivity" />
         <activity android:name=".HealthyCookingActivity" />
         <activity android:name=".SunriseTime" />
