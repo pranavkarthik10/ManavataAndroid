@@ -139,6 +139,10 @@ public class HomeScreen extends MainActivity implements NavigationView.OnNavigat
                 startActivity(intentnC);
                 break;
 
+            case R.id.nav_signout:
+                //type the signout code here
+                break;
+
         }
 
         return true;
