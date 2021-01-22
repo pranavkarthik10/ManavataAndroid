@@ -24,13 +24,20 @@ public class DailySchedulePage extends AppCompatActivity {
     private ImageButton lunchbutton;
     private ImageButton snacksbutton;
 
+    private int [] alarmimagebuttons = {
+            R.drawable.ic_group_36_3, R.drawable.ic_group_38,
+            R.drawable.ic_group_39, R.drawable.ic_group_40,
+            R.drawable.ic_group_41, R.drawable.ic_group_42};
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_schedule_page);
 
         mrecyclerView = findViewById(R.id.DSRecyclerView);
-        recyclerAdapter = new RecyclerAdapter();
+        recyclerAdapter = new RecyclerAdapter(alarmimagebuttons);
         //mrecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mrecyclerView.setAdapter(recyclerAdapter);
 

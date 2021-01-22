@@ -45,6 +45,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:background="@drawable/roundedcorners"
+        android:fontFamily="sans-serif-condensed-medium"
         android:text="@string/log_in_sign_up"
         android:textAllCaps="false"
         android:textColor="#1DA1F2"
