@@ -37,7 +37,7 @@ public class DailySchedulePage extends AppCompatActivity {
         setContentView(R.layout.activity_daily_schedule_page);
 
         mrecyclerView = findViewById(R.id.DSRecyclerView);
-        recyclerAdapter = new RecyclerAdapter(alarmimagebuttons);
+        recyclerAdapter = new RecyclerAdapter(alarmimagebuttons, this);
         //mrecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mrecyclerView.setAdapter(recyclerAdapter);
 
