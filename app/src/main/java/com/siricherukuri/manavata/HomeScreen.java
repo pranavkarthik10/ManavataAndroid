@@ -140,7 +140,13 @@ public class HomeScreen extends MainActivity implements NavigationView.OnNavigat
                 Intent intentnAM = new Intent(HomeScreen.this,AboutManavataActivity.class);
                 startActivity(intentnAM);
                 break;
+                
+             case R.id.nav_donate:
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://manavata.org/donate-now/"));
+                startActivity(browserIntent);
+                break;
 
+                
             case  R.id.nav_contact:
                 Intent intentnC = new Intent(HomeScreen.this,ContactUsActivity.class);
                 startActivity(intentnC);
