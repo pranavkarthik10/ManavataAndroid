@@ -6,6 +6,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -63,10 +64,6 @@ public class HomeScreen extends MainActivity implements NavigationView.OnNavigat
         idPF = findViewById(R.id.idPF);
         String name = getIntent().getStringExtra("userDisplayName");
         idPF.setText("Welcome " + name);
-
-        View headerView = navigationView.getHeaderView(0);
-        TextView displayName = headerView.findViewById(R.id.displayname);
-        displayName.setText(name);
 
         idAM = findViewById(R.id.idAM);
         idAM.setOnClickListener(new View.OnClickListener() {

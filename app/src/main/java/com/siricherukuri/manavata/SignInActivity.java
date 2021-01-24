@@ -76,7 +76,6 @@ public class SignInActivity extends MainActivity {
         });
 
         mFirebaseAuth = FirebaseAuth.getInstance();
-        FacebookSdk.sdkInitialize(getApplicationContext());
 
         textViewUser = findViewById(R.id.log_in_name);
         mLogo = findViewById(R.id.logo_picture);
