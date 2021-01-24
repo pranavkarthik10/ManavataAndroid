@@ -54,11 +54,11 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     {
         int image_id = alarmimagebuttons [position];
         holder.alarmholder.setImageResource(image_id);
-        isPM = (currentHour >= 12);
 
         calendar = Calendar.getInstance();
         currentHour = calendar.get(Calendar.HOUR_OF_DAY);
         currentMinute = calendar.get(Calendar.MINUTE);
+        isPM = (currentHour >= 12);
         holder.timeholder.setText(String.format("%02d:%02d %s", (currentHour == 12 || currentHour == 0) ? 12 : currentHour % 12, currentMinute, isPM ? "PM" : "AM"));
 
         holder.alarmholder.setOnClickListener(new View.OnClickListener() {
@@ -67,6 +67,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                 ettimePickerDialog = new TimePickerDialog(mcontext, new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker timePicker, int hourOfday, int minutes) {
+                        isPM = (hourOfday >= 12);
                         holder.timeholder.setText(String.format("%02d:%02d %s", (hourOfday == 12 || hourOfday == 0) ? 12 : hourOfday % 12, minutes, isPM ? "PM" : "AM"));
 
                         Intent intent = new Intent(AlarmClock.ACTION_SET_ALARM);
