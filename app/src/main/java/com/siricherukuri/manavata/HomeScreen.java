@@ -61,7 +61,12 @@ public class HomeScreen extends MainActivity implements NavigationView.OnNavigat
         });
 
         idPF = findViewById(R.id.idPF);
-        idPF.setText("Welcome " + getIntent().getStringExtra("userDisplayName"));
+        String name = getIntent().getStringExtra("userDisplayName");
+        idPF.setText("Welcome " + name);
+
+        View headerView = navigationView.getHeaderView(0);
+        TextView displayName = headerView.findViewById(R.id.displayname);
+        displayName.setText(name);
 
         idAM = findViewById(R.id.idAM);
         idAM.setOnClickListener(new View.OnClickListener() {
@@ -140,7 +145,13 @@ public class HomeScreen extends MainActivity implements NavigationView.OnNavigat
                 Intent intentnAM = new Intent(HomeScreen.this,AboutManavataActivity.class);
                 startActivity(intentnAM);
                 break;
+                
+             case R.id.nav_donate:
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://manavata.org/donate-now/"));
+                startActivity(browserIntent);
+                break;
 
+                
             case  R.id.nav_contact:
                 Intent intentnC = new Intent(HomeScreen.this,ContactUsActivity.class);
                 startActivity(intentnC);

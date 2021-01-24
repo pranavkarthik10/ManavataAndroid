@@ -10,7 +10,10 @@
         android:id="@+id/dailyschedbutton"
         android:layout_width="211dp"
         android:layout_height="159dp"
-        app:srcCompat="@drawable/ic_group_15"
+        android:background="@color/colorWhite"
+        android:src="@drawable/ic_group_15"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteX="3dp"
         tools:layout_editor_absoluteY="2dp" />
 
