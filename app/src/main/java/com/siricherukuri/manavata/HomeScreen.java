@@ -11,14 +11,22 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
 
+import com.facebook.AccessToken;
+import com.facebook.AccessTokenTracker;
+import com.facebook.login.LoginManager;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeScreen extends MainActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -27,7 +35,7 @@ public class HomeScreen extends MainActivity implements NavigationView.OnNavigat
     private Button idY;
     private Button idHC;
     private Button idPF;
-    private Button nav_signout;
+    private TextView displayName;
     private GoogleSignInClient mGoogleSignInClient;
 
     DrawerLayout drawerLayout;
@@ -47,7 +55,7 @@ public class HomeScreen extends MainActivity implements NavigationView.OnNavigat
         setSupportActionBar(toolbar);
 
         navigationView.bringToFront();
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
@@ -88,6 +96,7 @@ public class HomeScreen extends MainActivity implements NavigationView.OnNavigat
                 openHealthyCooking();
             }
         });
+        
     }
 
     @Override
@@ -119,10 +128,19 @@ public class HomeScreen extends MainActivity implements NavigationView.OnNavigat
         startActivity(intentHC);
     }
 
+    private void signOut() {
+        mGoogleSignInClient.signOut()
+                .addOnCompleteListener(this, new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {}
+                });
+    }
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
         switch (menuItem.getItemId()){
+
             case  R.id.nav_lifecoach:
                 Intent intentnLC = new Intent(HomeScreen.this,lifecoachbutton.class);
                 startActivity(intentnLC);
@@ -142,21 +160,23 @@ public class HomeScreen extends MainActivity implements NavigationView.OnNavigat
                 Intent intentnAM = new Intent(HomeScreen.this,AboutManavataActivity.class);
                 startActivity(intentnAM);
                 break;
-                
-             case R.id.nav_donate:
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://manavata.org/donate-now/"));
-                startActivity(browserIntent);
-                break;
 
-                
             case  R.id.nav_contact:
                 Intent intentnC = new Intent(HomeScreen.this,ContactUsActivity.class);
                 startActivity(intentnC);
                 break;
 
+            case R.id.nav_donate:
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://manavata.org/donate-now/"));
+                startActivity(browserIntent);
+                break;
+
             case R.id.nav_signout:
-                Intent intentnSO = new Intent(HomeScreen.this,MainActivity.class);
-                startActivity(intentnSO);
+                LoginManager.getInstance().logOut();
+                signOut();
+                Intent intent = new Intent(HomeScreen.this, MainActivity.class);
+                startActivity(intent);
+                finish();
                 break;
 
         }

@@ -8,7 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
@@ -55,33 +55,31 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         int image_id = alarmimagebuttons [position];
         holder.alarmholder.setImageResource(image_id);
 
+        calendar = Calendar.getInstance();
+        currentHour = calendar.get(Calendar.HOUR_OF_DAY);
+        currentMinute = calendar.get(Calendar.MINUTE);
+        isPM = (currentHour >= 12);
+        holder.timeholder.setText(String.format("%02d:%02d %s", (currentHour == 12 || currentHour == 0) ? 12 : currentHour % 12, currentMinute, isPM ? "PM" : "AM"));
+
         holder.alarmholder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                calendar = Calendar.getInstance();
-                currentHour = calendar.get(Calendar.HOUR_OF_DAY);
-                currentMinute = calendar.get(Calendar.MINUTE);
-                isPM = (currentHour >= 12);
-
-
-
                 ettimePickerDialog = new TimePickerDialog(mcontext, new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker timePicker, int hourOfday, int minutes) {
-                        holder.timeholder.setText(String.format("%02d:%02d %s", (currentHour == 12 || currentHour == 0) ? 12 : currentHour % 12, currentMinute, isPM ? "PM" : "AM"));
-
+                        isPM = (hourOfday >= 12);
+                        holder.timeholder.setText(String.format("%02d:%02d %s", (hourOfday == 12 || hourOfday == 0) ? 12 : hourOfday % 12, minutes, isPM ? "PM" : "AM"));
 
                         Intent intent = new Intent(AlarmClock.ACTION_SET_ALARM);
                         intent.putExtra(AlarmClock.EXTRA_HOUR, currentHour);
                         intent.putExtra(AlarmClock.EXTRA_MINUTES, currentMinute);
                         mcontext.startActivity(intent);
                     }
-                }, currentHour,currentMinute, false);
+                }, currentHour, currentMinute, false);
 
                 ettimePickerDialog.show();
             }
         });
-
     }
 
     @Override
@@ -91,7 +89,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
     class ViewHolder extends RecyclerView.ViewHolder {
 
-        ImageButton alarmholder;
+        ImageView alarmholder;
         TextView timeholder;
 
         public ViewHolder(@NonNull View itemView) {

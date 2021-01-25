@@ -3,6 +3,7 @@ package com.siricherukuri.manavata;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.DividerItemDecoration;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -37,6 +38,7 @@ public class DailySchedulePage extends AppCompatActivity {
         setContentView(R.layout.activity_daily_schedule_page);
 
         mrecyclerView = findViewById(R.id.DSRecyclerView);
+        mrecyclerView.addItemDecoration(new DividerItemDecoration(mrecyclerView.getContext(), DividerItemDecoration.VERTICAL));
         recyclerAdapter = new RecyclerAdapter(alarmimagebuttons, this);
         //mrecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mrecyclerView.setAdapter(recyclerAdapter);
