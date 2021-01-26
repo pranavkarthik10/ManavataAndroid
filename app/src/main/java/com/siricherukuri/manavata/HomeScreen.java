@@ -19,6 +19,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
+import com.facebook.FacebookSdk;
 import com.facebook.login.LoginManager;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -35,8 +36,6 @@ public class HomeScreen extends MainActivity implements NavigationView.OnNavigat
     private Button idY;
     private Button idHC;
     private Button idPF;
-    private TextView displayName;
-    private GoogleSignInClient mGoogleSignInClient;
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
@@ -128,14 +127,6 @@ public class HomeScreen extends MainActivity implements NavigationView.OnNavigat
         startActivity(intentHC);
     }
 
-    private void signOut() {
-        mGoogleSignInClient.signOut()
-                .addOnCompleteListener(this, new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {}
-                });
-    }
-
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
@@ -172,11 +163,6 @@ public class HomeScreen extends MainActivity implements NavigationView.OnNavigat
                 break;
 
             case R.id.nav_signout:
-                LoginManager.getInstance().logOut();
-                signOut();
-                Intent intent = new Intent(HomeScreen.this, MainActivity.class);
-                startActivity(intent);
-                finish();
                 break;
 
         }
