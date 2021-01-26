@@ -36,6 +36,7 @@ public class HomeScreen extends MainActivity implements NavigationView.OnNavigat
     private Button idY;
     private Button idHC;
     private Button idPF;
+    private GoogleSignInClient mGoogleSignInClient;
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
@@ -163,10 +164,25 @@ public class HomeScreen extends MainActivity implements NavigationView.OnNavigat
                 break;
 
             case R.id.nav_signout:
+                LoginManager.getInstance().logOut();
+                signOut();
+                Intent login = new Intent(HomeScreen.this, MainActivity.class);
+                startActivity(login);
+                finish();
                 break;
 
         }
 
         return true;
+    }
+
+    private void signOut() {
+        mGoogleSignInClient.signOut()
+                .addOnCompleteListener(this, new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        // ...
+                    }
+                });
     }
 }
