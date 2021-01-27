@@ -59,7 +59,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         currentHour = calendar.get(Calendar.HOUR_OF_DAY);
         currentMinute = calendar.get(Calendar.MINUTE);
         isPM = (currentHour >= 12);
-        holder.timeholder.setText(String.format("%02d:%02d %s", (currentHour == 12 || currentHour == 0) ? 12 : currentHour % 12, currentMinute, isPM ? "PM" : "AM"));
+
 
         holder.alarmholder.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,8 +71,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                         holder.timeholder.setText(String.format("%02d:%02d %s", (hourOfday == 12 || hourOfday == 0) ? 12 : hourOfday % 12, minutes, isPM ? "PM" : "AM"));
 
                         Intent intent = new Intent(AlarmClock.ACTION_SET_ALARM);
-                        intent.putExtra(AlarmClock.EXTRA_HOUR, currentHour);
-                        intent.putExtra(AlarmClock.EXTRA_MINUTES, currentMinute);
+                        intent.putExtra(AlarmClock.EXTRA_HOUR, hourOfday);
+                        intent.putExtra(AlarmClock.EXTRA_MINUTES, minutes);
                         mcontext.startActivity(intent);
                     }
                 }, currentHour, currentMinute, false);
