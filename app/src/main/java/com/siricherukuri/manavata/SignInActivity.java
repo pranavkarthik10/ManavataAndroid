@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
@@ -57,8 +58,11 @@ public class SignInActivity extends MainActivity {
     private int RC_SIGN_IN = 1;
 
     private Button mbypass;
-    public static final String MyPREFERENCES = "MyPrefs" ;
-    public static final String USER_DISPLAY_NAME= "USER_DISPLAY_NAME";
+    public static final String MyPREFERENCES = "MyPrefs";
+    public static final String USER_DISPLAY_NAME = "USER_DISPLAY_NAME";
+    public static final String AUTH_TYPE = "AUTH_TYPE";
+    public static final String GOOGLE = "GOOGLE";
+    public static final String FACEBOOK = "FACEBOOK";
     SharedPreferences preferences;
 
 
@@ -99,13 +103,15 @@ public class SignInActivity extends MainActivity {
                 if (currentAccessToken == null) {
                     mFirebaseAuth.signOut();
                     preferences.edit().remove(USER_DISPLAY_NAME).commit();
+                    preferences.edit().remove(AUTH_TYPE).commit();
+
                 }
             }
         };
 
         // If the access token is available already assign it.
-        if(AccessToken.getCurrentAccessToken()!= null){
-            openHomeScreen(preferences.getString(USER_DISPLAY_NAME, ""));
+        if (AccessToken.getCurrentAccessToken() != null) {
+            openHomeScreen(preferences.getString(USER_DISPLAY_NAME, ""), preferences.getString(AUTH_TYPE, ""));
         }
 
 
@@ -195,9 +201,10 @@ public class SignInActivity extends MainActivity {
 
     }
 
-    public void openHomeScreen(String userDisplayName) {
+    public void openHomeScreen(String userDisplayName, String type) {
         Intent intentHS = new Intent(SignInActivity.this, HomeScreen.class);
         intentHS.putExtra("userDisplayName", userDisplayName);
+        intentHS.putExtra(AUTH_TYPE, type);
         startActivity(intentHS);
     }
 
@@ -210,8 +217,8 @@ public class SignInActivity extends MainActivity {
                     Toast.makeText(SignInActivity.this, "Successful", Toast.LENGTH_SHORT).show();
                     FirebaseUser user = mAuth.getCurrentUser();
                     updateUI(user);
-                    addCurrentUser(user.getDisplayName());
-                    openHomeScreen(user.getDisplayName());
+                    addCurrentUser(user.getDisplayName(), GOOGLE);
+                    openHomeScreen(user.getDisplayName(), GOOGLE);
 
                 } else {
                     Toast.makeText(SignInActivity.this, "Failed", Toast.LENGTH_SHORT).show();
@@ -232,9 +239,9 @@ public class SignInActivity extends MainActivity {
                 if (task.isSuccessful()) {
                     Log.d(TAG, "Sign in with credential: successful");
                     user = mFirebaseAuth.getCurrentUser();
-                    addCurrentUser(user.getDisplayName());
+                    addCurrentUser(user.getDisplayName(), FACEBOOK);
                     updateUI(user);
-                    openHomeScreen(user.getDisplayName());
+                    openHomeScreen(user.getDisplayName(), FACEBOOK);
                 } else {
                     Log.d(TAG, "Sign in with credential: failure", task.getException());
                     updategoogleUI(null);
@@ -258,10 +265,12 @@ public class SignInActivity extends MainActivity {
         }
     }
 
-    private void addCurrentUser(String displayName){
+    private void addCurrentUser(String displayName, String type) {
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString(USER_DISPLAY_NAME, displayName).commit();
+        editor.putString(AUTH_TYPE, type).commit();
     }
+
     private void updategoogleUI(FirebaseUser fUser) {
         btnSignOut.setVisibility(View.VISIBLE);
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
