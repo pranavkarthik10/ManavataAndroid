@@ -46,17 +46,14 @@
             app:layout_constraintHorizontal_bias="0.875"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_knowmore" />
+            android:src="@drawable/ic_knowmore" />
 
         <TextView
             android:id="@+id/textView5"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="33dp"
-            android:layout_marginEnd="166dp"
-            android:layout_marginBottom="29dp"
             android:text="Phone: 9966673111"
+            android:padding="16dp"
             android:textColor="#000000"
             android:textSize="25sp"
             android:textStyle="bold"
@@ -72,10 +69,11 @@
 
         <TextView
             android:id="@+id/textView4"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="50dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="16dp"
             android:text="Our Email: info@manavata.org"
             android:textColor="#000000"
             android:textSize="25sp"
@@ -91,53 +89,44 @@
 
         <TextView
             android:id="@+id/textView6"
-            android:layout_width="416dp"
-            android:layout_height="122dp"
-            android:layout_marginStart="13dp"
-            android:layout_marginTop="16dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
             android:text="Location- Plot No: 62, Sri Tower, 4th floor KPHB 7th Phase, Beside Sai Service, Hydrabad, Telangana- 500085"
             android:textColor="#000000"
             android:textSize="25sp"
             android:textStyle="bold"
-            app:autoSizeMaxTextSize="100sp"
-            app:autoSizeMinTextSize="20sp"
-            app:autoSizeStepGranularity="20sp"
-            app:autoSizeTextType="uniform"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            app:layout_constraintBottom_toTopOf="@+id/textView7"/>
 
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="316dp"
-            android:layout_height="54dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginEnd="91dp"
-            android:text="App Design: Mukund Gorla and Pranav Karthik"
-            android:textColor="#000000"
-            app:autoSizeMaxTextSize="100sp"
-            app:autoSizeMinTextSize="20sp"
-            app:autoSizeStepGranularity="20sp"
-            app:autoSizeTextType="uniform"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
         <TextView
             android:id="@+id/textView7"
-            android:layout_width="356dp"
-            android:layout_height="87dp"
-            android:layout_marginTop="140dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:layout_marginTop="16dp"
             android:text="Application Development: Siri Cherukuri and Rohan Jagarlamudi"
             android:textColor="#000000"
-            app:autoSizeMaxTextSize="100sp"
-            app:autoSizeMinTextSize="20sp"
-            app:autoSizeStepGranularity="20sp"
-            app:autoSizeTextType="uniform"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+            app:layout_constraintTop_toBottomOf="@+id/textView6"
+            app:layout_constraintBottom_toTopOf="@+id/textView8"
+            />
 
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:padding="16dp"
+            android:text="App Design: Mukund Gorla and Pranav Karthik"
+            android:textColor="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView7"
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
