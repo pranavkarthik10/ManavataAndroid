@@ -13,6 +13,8 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.solver.state.State;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -66,11 +68,15 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         int image_id = alarmimagebuttons [position];
         holder.alarmholder.setImageResource(image_id);
 
+        calendar = Calendar.getInstance();
+        currentHour = calendar.get(Calendar.HOUR_OF_DAY);
+        currentMinute = calendar.get(Calendar.MINUTE);
+
         if(!currentSchedule.equals("")) {
             holder.timeholder.setText(currentSchedule);
         }
 
-        holder.alarmholder.setOnClickListener(new View.OnClickListener() {
+        holder.dailyScheduleLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ettimePickerDialog = new TimePickerDialog(mcontext, new TimePickerDialog.OnTimeSetListener() {
@@ -83,8 +89,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                         preferences.saveDailySchedule(dailyScheduleList);
 
                         Intent intent = new Intent(AlarmClock.ACTION_SET_ALARM);
-                        intent.putExtra(AlarmClock.EXTRA_HOUR, currentHour);
-                        intent.putExtra(AlarmClock.EXTRA_MINUTES, currentMinute);
+                        intent.putExtra(AlarmClock.EXTRA_HOUR, hourOfday);
+                        intent.putExtra(AlarmClock.EXTRA_MINUTES, minutes);
                         mcontext.startActivity(intent);
                     }
                 }, currentHour, currentMinute, false);
@@ -103,12 +109,14 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
         ImageView alarmholder;
         TextView timeholder;
+        ConstraintLayout dailyScheduleLayout;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             alarmholder = itemView.findViewById(R.id.alarmholder);
             timeholder = itemView.findViewById(R.id.timeholder);
+            dailyScheduleLayout = itemView.findViewById(R.id.dailyScheduleLayout);
         }
     }
 
