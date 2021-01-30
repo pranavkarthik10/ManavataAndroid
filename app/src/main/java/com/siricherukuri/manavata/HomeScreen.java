@@ -124,6 +124,27 @@ public class HomeScreen extends MainActivity implements NavigationView.OnNavigat
         startActivity(intentHC);
     }
 
+    private void signOut() {
+        if (authType != null) {
+            if (authType.equalsIgnoreCase(GOOGLE)) {
+                mGoogleSignInClient.signOut()
+                        .addOnCompleteListener(this, new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                Intent login = new Intent(HomeScreen.this, MainActivity.class);
+                                startActivity(login);
+                                finish();
+                            }
+                        });
+            } else if (authType.equalsIgnoreCase(FACEBOOK)) {
+                LoginManager.getInstance().logOut(); {
+                    Intent loginF = new Intent(HomeScreen.this, MainActivity.class);
+                    startActivity(loginF);
+                }
+            }
+        }
+    }
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
@@ -166,23 +187,5 @@ public class HomeScreen extends MainActivity implements NavigationView.OnNavigat
         }
 
         return true;
-    }
-
-    private void signOut() {
-        if (authType != null) {
-            if (authType.equalsIgnoreCase(GOOGLE)) {
-                mGoogleSignInClient.signOut()
-                        .addOnCompleteListener(this, new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                Intent login = new Intent(HomeScreen.this, MainActivity.class);
-                                startActivity(login);
-                                finish();
-                            }
-                        });
-            } else if (authType.equalsIgnoreCase(FACEBOOK)) {
-                LoginManager.getInstance().logOut();
-            }
-        }
     }
 }
