@@ -52,10 +52,11 @@ public class SignInActivity extends MainActivity {
     private FirebaseUser user;
 
     private SignInButton googleSignIn;
-    private GoogleSignInClient mGoogleSignInClient;
+    public GoogleSignInClient mGoogleSignInClient;
     private FirebaseAuth mAuth;
     private Button btnSignOut;
     private int RC_SIGN_IN = 1;
+    public GoogleSignInOptions gso;
 
     private Button mbypass;
     public static final String MyPREFERENCES = "MyPrefs";
@@ -119,7 +120,7 @@ public class SignInActivity extends MainActivity {
         mAuth = FirebaseAuth.getInstance();
         btnSignOut = findViewById(R.id.log_out_google);
 
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
