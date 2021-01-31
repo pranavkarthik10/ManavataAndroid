@@ -2,55 +2,48 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
+    <TextView
         android:id="@+id/philosophy"
-        android:layout_width="222dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:background="@color/colorClear"
         android:text="@string/philosophy"
         android:textAllCaps="false"
-        android:textSize="35sp"
+        android:textSize="25sp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/colorMission"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.16" />
 
-    <Button
+    <TextView
         android:id="@+id/mission"
-        android:layout_width="218dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:background="@color/colorClear"
         android:text="@string/mission"
         android:textAllCaps="false"
-        android:textSize="35sp"
+        android:textSize="25sp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/colorMission"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.241" />
 
-    <Button
+    <TextView
         android:id="@+id/ourwork"
-        android:layout_width="216dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:background="@color/colorClear"
         android:text="@string/our_work"
         android:textAllCaps="false"
-        android:textSize="35sp"
+        android:textSize="25sp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/colorMission"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.479"
@@ -58,17 +51,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.322" />
 
-    <Button
+    <TextView
         android:id="@+id/founder"
-        android:layout_width="211dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerInParent="true"
-        android:background="@color/colorClear"
         android:text="@string/founder"
         android:textAllCaps="false"
-        android:textSize="35sp"
+        android:textSize="25sp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/colorMission"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -76,16 +67,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.403" />
 
-    <Button
+    <TextView
         android:id="@+id/ourteam"
-        android:layout_width="210dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:background="@color/colorClear"
         android:text="@string/our_team"
         android:textAllCaps="false"
-        android:textSize="35sp"
+        android:textSize="25sp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/colorMission"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

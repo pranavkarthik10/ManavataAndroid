@@ -1,8 +1,6 @@
 package com.siricherukuri.manavata;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -64,7 +62,7 @@ public class SignInActivity extends MainActivity {
     public static final String AUTH_TYPE = "AUTH_TYPE";
     public static final String GOOGLE = "GOOGLE";
     public static final String FACEBOOK = "FACEBOOK";
-    SharedPreferences preferences;
+    MySharedPreferences preferences;
 
 
     @Override
@@ -80,7 +78,7 @@ public class SignInActivity extends MainActivity {
                 startActivity(i);
             }
         });
-        preferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+        preferences = new MySharedPreferences(this);
 
         mFirebaseAuth = FirebaseAuth.getInstance();
         facebookAuthSetup();
@@ -103,8 +101,7 @@ public class SignInActivity extends MainActivity {
             protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken, AccessToken currentAccessToken) {
                 if (currentAccessToken == null) {
                     mFirebaseAuth.signOut();
-                    preferences.edit().remove(USER_DISPLAY_NAME).commit();
-                    preferences.edit().remove(AUTH_TYPE).commit();
+                    preferences.removeCurrentUser();
 
                 }
             }
@@ -112,7 +109,7 @@ public class SignInActivity extends MainActivity {
 
         // If the access token is available already assign it.
         if (AccessToken.getCurrentAccessToken() != null) {
-            openHomeScreen(preferences.getString(USER_DISPLAY_NAME, ""), preferences.getString(AUTH_TYPE, ""));
+            openHomeScreen(preferences.getUserDisplayName(), preferences.getAuthType());
         }
 
 
@@ -218,7 +215,7 @@ public class SignInActivity extends MainActivity {
                     Toast.makeText(SignInActivity.this, "Successful", Toast.LENGTH_SHORT).show();
                     FirebaseUser user = mAuth.getCurrentUser();
                     updateUI(user);
-                    addCurrentUser(user.getDisplayName(), GOOGLE);
+                    preferences.saveCurrentUser(user.getDisplayName(), GOOGLE);
                     openHomeScreen(user.getDisplayName(), GOOGLE);
 
                 } else {
@@ -240,7 +237,7 @@ public class SignInActivity extends MainActivity {
                 if (task.isSuccessful()) {
                     Log.d(TAG, "Sign in with credential: successful");
                     user = mFirebaseAuth.getCurrentUser();
-                    addCurrentUser(user.getDisplayName(), FACEBOOK);
+                    preferences.saveCurrentUser(user.getDisplayName(), FACEBOOK);
                     updateUI(user);
                     openHomeScreen(user.getDisplayName(), FACEBOOK);
                 } else {
@@ -264,12 +261,6 @@ public class SignInActivity extends MainActivity {
                 mLogo.setImageResource(R.drawable.facebooklogo);
             }
         }
-    }
-
-    private void addCurrentUser(String displayName, String type) {
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.putString(USER_DISPLAY_NAME, displayName).commit();
-        editor.putString(AUTH_TYPE, type).commit();
     }
 
     private void updategoogleUI(FirebaseUser fUser) {

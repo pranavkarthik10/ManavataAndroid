@@ -2,22 +2,19 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
 
-    <Button
+    <TextView
         android:id="@+id/samskaravidya"
-        android:layout_width="300dp"
-        android:layout_height="80dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:background="@color/colorClear"
-        android:onClick="MyWeb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="@string/samskara_vidya"
         android:textAllCaps="false"
-        android:textSize="30sp"
+        android:textSize="25sp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/colorMission"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -25,19 +22,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.056" />
 
-    <Button
+    <TextView
         android:id="@+id/yogaandhealthcare"
-        android:layout_width="300dp"
-        android:layout_height="80dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_centerHorizontal="true"
-        android:background="@color/colorClear"
-        android:onClick="MyWeb2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="@string/yoga_and_health_care"
         android:textAllCaps="false"
-        android:textSize="30sp"
+        android:textSize="25sp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/colorMission"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.522"
@@ -45,18 +38,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.181" />
 
-    <Button
+    <TextView
         android:id="@+id/universityforhumanity"
-        android:layout_width="300dp"
-        android:layout_height="80dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:background="@color/colorClear"
-        android:onClick="MyWeb3"
+        android:textSize="25sp"
         android:text="@string/university_for_humanity"
         android:textAllCaps="false"
-        android:textSize="30sp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/colorMission"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.522"
@@ -64,18 +58,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.333" />
 
-    <Button
+    <TextView
         android:id="@+id/ashramandchildcare"
-        android:layout_width="300dp"
-        android:layout_height="80dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerInParent="true"
-        android:background="@color/colorClear"
-        android:onClick="MyWeb4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="@string/ashram_and_child_care"
         android:textAllCaps="false"
-        android:textSize="30sp"
+        android:textSize="25sp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/colorMission"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.522"
@@ -83,17 +74,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.485" />
 
-    <Button
+    <TextView
         android:id="@+id/helpneedy"
-        android:layout_width="300dp"
-        android:layout_height="80dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:background="@color/colorClear"
-        android:onClick="MyWeb5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="@string/help_needy"
         android:textAllCaps="false"
-        android:textSize="30sp"
+        android:textSize="25sp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/colorMission"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.522"
@@ -101,17 +90,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.625" />
 
-    <Button
+    <TextView
         android:id="@+id/climatechange"
-        android:layout_width="300dp"
-        android:layout_height="80dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:background="@color/colorClear"
-        android:onClick="MyWeb6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="@string/climate_change"
         android:textAllCaps="false"
-        android:textSize="30sp"
+        android:textSize="25sp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/colorMission"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"

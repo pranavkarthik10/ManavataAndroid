@@ -139,7 +139,7 @@
             app:layout_constraintStart_toStartOf="@+id/idLC"
             app:layout_constraintTop_toTopOf="@+id/idLC"
             app:layout_constraintVertical_bias="1.0"
-            app:srcCompat="@drawable/ic_group_76" />
+            android:src="@drawable/ic_group_76" />
 
         <ImageView
             android:id="@+id/yogaimage"
@@ -153,9 +153,7 @@
             app:layout_constraintStart_toStartOf="@+id/idY"
             app:layout_constraintTop_toTopOf="@+id/idY"
             app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/ic_group_77" />
-
-        <ImageView
+            android:src="@drawable/ic_group_77" />
             android:id="@+id/aboutmanavataimage"
             android:layout_width="97dp"
             android:layout_height="112dp"
@@ -166,7 +164,7 @@
             app:layout_constraintStart_toStartOf="@+id/idAM"
             app:layout_constraintTop_toTopOf="@+id/idAM"
             app:layout_constraintVertical_bias="0.785"
-            app:srcCompat="@drawable/ic_group_12" />
+            android:src="@drawable/ic_group_12" />
 
         <ImageView
             android:id="@+id/hcbowl"
@@ -179,10 +177,7 @@
             app:layout_constraintStart_toStartOf="@+id/idHC"
             app:layout_constraintTop_toTopOf="@+id/idHC"
             app:layout_constraintVertical_bias="0.816"
-            app:srcCompat="@drawable/ic_healthy_cooking" />
-
-
-
+            android:src="@drawable/ic_healthy_cooking" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>

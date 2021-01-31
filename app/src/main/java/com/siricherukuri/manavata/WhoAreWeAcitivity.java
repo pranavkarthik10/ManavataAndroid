@@ -1,8 +1,11 @@
 package com.siricherukuri.manavata;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
+import android.widget.TextView;
 
 
 public class WhoAreWeAcitivity extends MainActivity {
@@ -16,11 +19,25 @@ public class WhoAreWeAcitivity extends MainActivity {
     }
 
     public void defineButtons() {
-        findViewById(R.id.philosophy).setOnClickListener(buttonClickListener);
-        findViewById(R.id.mission).setOnClickListener(buttonClickListener);
-        findViewById(R.id.ourwork).setOnClickListener(buttonClickListener);
-        findViewById(R.id.founder).setOnClickListener(buttonClickListener);
-        findViewById(R.id.ourteam).setOnClickListener(buttonClickListener);
+        TextView philosophy = findViewById(R.id.philosophy);
+        philosophy.setText(Html.fromHtml("<u>" + philosophy.getText() + "</u>"));
+        philosophy.setOnClickListener(buttonClickListener);
+
+        TextView mission = findViewById(R.id.mission);
+        mission.setText(Html.fromHtml("<u>" + mission.getText() + "</u>"));
+        mission.setOnClickListener(buttonClickListener);
+
+        TextView ourwork = findViewById(R.id.ourwork);
+        ourwork.setText(Html.fromHtml("<u>" + ourwork.getText() + "</u>"));
+        ourwork.setOnClickListener(buttonClickListener);
+
+        TextView founder = findViewById(R.id.founder);
+        founder.setText(Html.fromHtml("<u>" + founder.getText() + "</u>"));
+        founder.setOnClickListener(buttonClickListener);
+
+        TextView ourteam = findViewById(R.id.ourteam);
+        ourteam.setText(Html.fromHtml("<u>" + ourteam.getText() + "</u>"));
+        ourteam.setOnClickListener(buttonClickListener);
     }
 
     private View.OnClickListener buttonClickListener = new View.OnClickListener() {
@@ -34,7 +51,7 @@ public class WhoAreWeAcitivity extends MainActivity {
                     startActivity(new Intent(WhoAreWeAcitivity.this, MissionActivity.class));
                     break;
                 case R.id.ourwork:
-                    startActivity(new Intent(WhoAreWeAcitivity.this, OurWorkActivity.class));
+                    openUrl("https://manavata.org/about-us/#ourwork");
                     break;
                 case R.id.founder:
                     startActivity(new Intent(WhoAreWeAcitivity.this, FounderActivity.class));
@@ -45,4 +62,10 @@ public class WhoAreWeAcitivity extends MainActivity {
             }
         }
     };
+
+    public void openUrl(String url) {
+        Uri uri = Uri.parse(url);
+        Intent launchWeb = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(launchWeb);
+    }
 }

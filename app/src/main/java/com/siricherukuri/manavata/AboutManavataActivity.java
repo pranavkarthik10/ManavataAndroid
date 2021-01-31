@@ -2,7 +2,9 @@ package com.siricherukuri.manavata;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
+import android.widget.TextView;
 
 public class AboutManavataActivity extends MainActivity {
 
@@ -15,8 +17,12 @@ public class AboutManavataActivity extends MainActivity {
     }
 
     public void defineButtons() {
-        findViewById(R.id.whatdowedo).setOnClickListener(buttonClickListener);
-        findViewById(R.id.whoarewe).setOnClickListener(buttonClickListener);
+        TextView whatWedo = findViewById(R.id.whatdowedo);
+        whatWedo.setText(Html.fromHtml("<u>"+whatWedo.getText()+"</u>"));
+        whatWedo.setOnClickListener(buttonClickListener);
+        TextView whoarewe = findViewById(R.id.whoarewe);
+        whoarewe.setText(Html.fromHtml("<u>"+whoarewe.getText()+"</u>"));
+        whoarewe.setOnClickListener(buttonClickListener);
     }
 
     private View.OnClickListener buttonClickListener = new View.OnClickListener() {

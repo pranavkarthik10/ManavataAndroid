@@ -23,6 +23,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.ArrayList;
+
 import static com.siricherukuri.manavata.SignInActivity.AUTH_TYPE;
 import static com.siricherukuri.manavata.SignInActivity.FACEBOOK;
 import static com.siricherukuri.manavata.SignInActivity.GOOGLE;
@@ -41,6 +43,7 @@ public class HomeScreen extends MainActivity implements NavigationView.OnNavigat
     NavigationView navigationView;
     Toolbar toolbar;
     String authType;
+    MySharedPreferences pref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +56,18 @@ public class HomeScreen extends MainActivity implements NavigationView.OnNavigat
                 .build();
 
         mGoogleSignInClient = GoogleSignIn.getClient(HomeScreen.this, gso);
+
+        pref = new MySharedPreferences(HomeScreen.this);
+        if(pref.isFirstTimeUser()){
+            ArrayList<String> scheduleList = new ArrayList<String>();
+            for(int i = 0; i< 6; i++) {
+                scheduleList.add("");
+            }
+
+            pref.saveDailySchedule(scheduleList);
+
+            pref.setFirstTimeUser(false);
+        }
 
         drawerLayout = findViewById(R.id.homescreendrawerlayout);
         navigationView = findViewById(R.id.nav_view);

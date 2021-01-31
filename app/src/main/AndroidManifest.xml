@@ -12,31 +12,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SnacksTime"/>
-        <activity android:name=".LunchTime" />
-        <activity android:name=".BreakfastTime" />
-        <activity android:name=".YogaTime" />
-        <activity android:name=".ContactUsActivity"/>
-        <activity android:name=".YogaActivity" />
-        <activity android:name=".HealthyCookingActivity" />
-        <activity android:name=".SunriseTime" />
-        <activity android:name=".WakeUpTime" />
-        <activity android:name=".DailySchedulePage" />
-        <activity android:name=".lifecoachbutton" />
-        <activity android:name=".HomeScreen" />
-        <activity android:name=".WhoAreWeAcitivity" />
-        <activity android:name=".WhatDoWeDoActivity" />
-        <activity android:name=".PhilosophyActivity" />
-        <activity android:name=".OurWorkActivity" />
-        <activity android:name=".OurTeamActivity" />
-        <activity android:name=".MissionActivity" />
-        <activity android:name=".FounderActivity" />
-        <activity android:name=".AboutManavataActivity" />
-        <activity android:name=".SignInActivity" />
-        <activity android:name=".EmailActivity" />
-        <activity android:name=".GoogleEmailActivity" />
-        <activity android:name=".FacebookActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".ContactUsActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".YogaActivity"/>
+        <activity android:name=".HealthyCookingActivity"/>
+        <activity android:name=".DailySchedulePage" android:screenOrientation="portrait"/>
+        <activity android:name=".lifecoachbutton" android:screenOrientation="portrait"/>
+        <activity android:name=".HomeScreen" android:screenOrientation="portrait"/>
+        <activity android:name=".WhoAreWeAcitivity" android:screenOrientation="portrait" />
+        <activity android:name=".WhatDoWeDoActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".PhilosophyActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".OurWorkActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".OurTeamActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".MissionActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".FounderActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".AboutManavataActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".SignInActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".EmailActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".GoogleEmailActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".FacebookActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".MainActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
