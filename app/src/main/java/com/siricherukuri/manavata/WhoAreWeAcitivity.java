@@ -1,6 +1,7 @@
 package com.siricherukuri.manavata;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
@@ -50,7 +51,7 @@ public class WhoAreWeAcitivity extends MainActivity {
                     startActivity(new Intent(WhoAreWeAcitivity.this, MissionActivity.class));
                     break;
                 case R.id.ourwork:
-                    startActivity(new Intent(WhoAreWeAcitivity.this, OurWorkActivity.class));
+                    openUrl("https://manavata.org/about-us/#ourwork");
                     break;
                 case R.id.founder:
                     startActivity(new Intent(WhoAreWeAcitivity.this, FounderActivity.class));
@@ -61,4 +62,10 @@ public class WhoAreWeAcitivity extends MainActivity {
             }
         }
     };
+
+    public void openUrl(String url) {
+        Uri uri = Uri.parse(url);
+        Intent launchWeb = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(launchWeb);
+    }
 }
