@@ -154,6 +154,8 @@
             app:layout_constraintTop_toTopOf="@+id/idY"
             app:layout_constraintVertical_bias="0.0"
             android:src="@drawable/ic_group_77" />
+
+        <ImageView
             android:id="@+id/aboutmanavataimage"
             android:layout_width="97dp"
             android:layout_height="112dp"
