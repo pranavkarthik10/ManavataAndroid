@@ -140,7 +140,7 @@
             app:layout_constraintStart_toStartOf="@+id/idLC"
             app:layout_constraintTop_toTopOf="@+id/idLC"
             app:layout_constraintVertical_bias="1.0"
-            app:srcCompat="@drawable/ic_group_76" />
+            android:src="@drawable/ic_group_76" />
 
         <ImageView
             android:id="@+id/yogaimage"
@@ -154,7 +154,7 @@
             app:layout_constraintStart_toStartOf="@+id/idY"
             app:layout_constraintTop_toTopOf="@+id/idY"
             app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/ic_group_77" />
+            android:src="@drawable/ic_group_77" />
 
         <ImageView
             android:id="@+id/contact_us_button"
@@ -164,6 +164,7 @@
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="2dp"
             android:rotation="180"
+            android:visibility="gone"
             app:layout_constraintBottom_toTopOf="@+id/idPF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -181,7 +182,7 @@
             app:layout_constraintStart_toStartOf="@+id/idAM"
             app:layout_constraintTop_toTopOf="@+id/idAM"
             app:layout_constraintVertical_bias="0.785"
-            app:srcCompat="@drawable/ic_group_12" />
+            android:src="@drawable/ic_group_12" />
 
         <ImageView
             android:id="@+id/hcbowl"
@@ -194,10 +195,7 @@
             app:layout_constraintStart_toStartOf="@+id/idHC"
             app:layout_constraintTop_toTopOf="@+id/idHC"
             app:layout_constraintVertical_bias="0.816"
-            app:srcCompat="@drawable/ic_healthy_cooking" />
-
-
-
+            android:src="@drawable/ic_healthy_cooking" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>
