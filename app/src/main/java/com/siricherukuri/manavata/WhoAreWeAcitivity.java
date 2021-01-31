@@ -30,11 +30,11 @@ public class WhoAreWeAcitivity extends MainActivity {
         ourwork.setText(Html.fromHtml("<u>"+ourwork.getText()+"</u>"));
         ourwork.setOnClickListener(buttonClickListener);
 
-        TextView founder = findViewById(R.id.mission);
+        TextView founder = findViewById(R.id.founder);
         founder.setText(Html.fromHtml("<u>"+founder.getText()+"</u>"));
         founder.setOnClickListener(buttonClickListener);
 
-        TextView ourteam = findViewById(R.id.mission);
+        TextView ourteam = findViewById(R.id.ourteam);
         ourteam.setText(Html.fromHtml("<u>"+ourteam.getText()+"</u>"));
         ourteam.setOnClickListener(buttonClickListener);
     }
