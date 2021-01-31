@@ -2,7 +2,9 @@ package com.siricherukuri.manavata;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
+import android.widget.TextView;
 
 
 public class WhoAreWeAcitivity extends MainActivity {
@@ -16,11 +18,25 @@ public class WhoAreWeAcitivity extends MainActivity {
     }
 
     public void defineButtons() {
-        findViewById(R.id.philosophy).setOnClickListener(buttonClickListener);
-        findViewById(R.id.mission).setOnClickListener(buttonClickListener);
-        findViewById(R.id.ourwork).setOnClickListener(buttonClickListener);
-        findViewById(R.id.founder).setOnClickListener(buttonClickListener);
-        findViewById(R.id.ourteam).setOnClickListener(buttonClickListener);
+        TextView philosophy = findViewById(R.id.philosophy);
+        philosophy.setText(Html.fromHtml("<u>"+philosophy.getText()+"</u>"));
+        philosophy.setOnClickListener(buttonClickListener);
+
+        TextView mission = findViewById(R.id.mission);
+        mission.setText(Html.fromHtml("<u>"+mission.getText()+"</u>"));
+        mission.setOnClickListener(buttonClickListener);
+
+        TextView ourwork = findViewById(R.id.ourwork);
+        ourwork.setText(Html.fromHtml("<u>"+ourwork.getText()+"</u>"));
+        ourwork.setOnClickListener(buttonClickListener);
+
+        TextView founder = findViewById(R.id.mission);
+        founder.setText(Html.fromHtml("<u>"+founder.getText()+"</u>"));
+        founder.setOnClickListener(buttonClickListener);
+
+        TextView ourteam = findViewById(R.id.mission);
+        ourteam.setText(Html.fromHtml("<u>"+ourteam.getText()+"</u>"));
+        ourteam.setOnClickListener(buttonClickListener);
     }
 
     private View.OnClickListener buttonClickListener = new View.OnClickListener() {
