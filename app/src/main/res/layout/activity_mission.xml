@@ -8,11 +8,8 @@
 
     <TextView
         android:id="@+id/missionDefine"
-        android:layout_width="333dp"
-        android:layout_height="271dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="@string/mission_info"
         android:textAlignment="center"
         android:textColor="@color/colorBlack"
@@ -25,12 +22,8 @@
 
     <TextView
         android:id="@+id/mission"
-        android:layout_width="355dp"
-        android:layout_height="146dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="We Believe Every Person Deserves The Choice To Live With Dignity Not Dependence"
         android:textAlignment="center"
         android:textAllCaps="false"
@@ -45,12 +38,8 @@
 
     <TextView
         android:id="@+id/missionTitle"
-        android:layout_width="331dp"
-        android:layout_height="63dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="@string/mission_title"
         android:textAlignment="center"
         android:textColor="@color/colorBlack"
