@@ -5,17 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".MainActivity"
-    tools:ignore="NamespaceTypo">
+    tools:ignore="NamespaceTypo"
+    android:background="@color/colorWhite">
 
     <TextView
-    android:id="@+id/textView"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Sabja Tulasi/Basil Seeds"
-    android:layout_marginTop="15dp"
-    android:textColor="@color/colorBlack"
-    android:textSize="25dp"/>
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Sabja Tulasi/Basil Seeds"
+        android:textColor="@color/colorBlack"
+        android:textSize="25dp" />
 
     <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
         android:layout_width="match_parent"
@@ -26,10 +28,10 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
         android:text="Green Chutney"
         android:textColor="@color/colorBlack"
-        android:layout_marginTop="15dp"
-        android:textSize="25dp"/>
+        android:textSize="25dp" />
 
     <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
         android:layout_width="match_parent"
