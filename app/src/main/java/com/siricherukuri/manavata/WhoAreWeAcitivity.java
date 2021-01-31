@@ -19,23 +19,23 @@ public class WhoAreWeAcitivity extends MainActivity {
 
     public void defineButtons() {
         TextView philosophy = findViewById(R.id.philosophy);
-        philosophy.setText(Html.fromHtml("<u>"+philosophy.getText()+"</u>"));
+        philosophy.setText(Html.fromHtml("<u>" + philosophy.getText() + "</u>"));
         philosophy.setOnClickListener(buttonClickListener);
 
         TextView mission = findViewById(R.id.mission);
-        mission.setText(Html.fromHtml("<u>"+mission.getText()+"</u>"));
+        mission.setText(Html.fromHtml("<u>" + mission.getText() + "</u>"));
         mission.setOnClickListener(buttonClickListener);
 
         TextView ourwork = findViewById(R.id.ourwork);
-        ourwork.setText(Html.fromHtml("<u>"+ourwork.getText()+"</u>"));
+        ourwork.setText(Html.fromHtml("<u>" + ourwork.getText() + "</u>"));
         ourwork.setOnClickListener(buttonClickListener);
 
         TextView founder = findViewById(R.id.founder);
-        founder.setText(Html.fromHtml("<u>"+founder.getText()+"</u>"));
+        founder.setText(Html.fromHtml("<u>" + founder.getText() + "</u>"));
         founder.setOnClickListener(buttonClickListener);
 
         TextView ourteam = findViewById(R.id.ourteam);
-        ourteam.setText(Html.fromHtml("<u>"+ourteam.getText()+"</u>"));
+        ourteam.setText(Html.fromHtml("<u>" + ourteam.getText() + "</u>"));
         ourteam.setOnClickListener(buttonClickListener);
     }
 
