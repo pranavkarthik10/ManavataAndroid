@@ -2,31 +2,33 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:src="@color/colorWhite">
 
-    <Button
+    <TextView
         android:id="@+id/whoarewe"
-        android:layout_width="240dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:background="@color/colorClear"
         android:text="@string/who_are_we"
         android:textAllCaps="false"
-        android:textSize="35sp"
+        android:textSize="25sp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/colorMission"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <TextView
         android:id="@+id/whatdowedo"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorClear"
         android:text="@string/what_do_we_do"
         android:textAllCaps="false"
-        android:textSize="35sp"
+        android:textSize="25sp"
+        android:textColor="@color/colorMission"
+        android:gravity="center_horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.535"
